@@ -17,7 +17,7 @@ git pull origin development
 ```
 #### 2.create new function branch:
 
-Name rule: feature/<function-name>
+Name rule: feature/<<function-name>>
 
 #### 3.commit code:
 
