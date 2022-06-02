@@ -32,7 +32,7 @@ MVC Pattern Architecture:
 ```js
 +-- java/com/is1431_prm392_group_project/is1431_prm392_group_project
 |   +-- config // Environment Configuration
-|   +-- entity // Entities generated
+|   +-- models // Models object generated
 |   +-- dao // Data access object generated
 |   +-- modules
 |   |   +-- auth // Authentication
