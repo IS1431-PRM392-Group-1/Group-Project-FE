@@ -29,7 +29,7 @@ Make sure the code is working and has updated to the latest version from develop
 
 ## Java structure
 MVC Pattern Architecture:
-
+```js
 +-- java/com/is1431_prm392_group_project/is1431_prm392_group_project
 |   +-- config // Environment Configuration
 |   +-- entity // Entities generated
@@ -45,6 +45,7 @@ MVC Pattern Architecture:
 |   |   |   +-- * // models, repositories, services...
 |   |   |   +-- shared // Shared Android Modules
 |   |   +-- * // Other Android Modules, non-global, same as common structure above
+```
 ## User manual
 
 #### 1. Requirements
