@@ -12,7 +12,7 @@ import java.io.OutputStream;
 
 public class DatabaseInitializer extends SQLiteOpenHelper {
 
-    private static String DB_PATH = "/data/data/com.bfil.ormliterepo/databases/";
+    private static String DB_PATH = "/data/data/com.is1431_prm392_group_project.is1431_prm392_group_project/databases/";
     private static String DB_NAME = "db.sqlite";
     private final Context context;
     private SQLiteDatabase database;

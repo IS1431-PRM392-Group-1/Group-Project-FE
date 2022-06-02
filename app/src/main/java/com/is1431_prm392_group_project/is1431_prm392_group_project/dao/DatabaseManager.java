@@ -13,7 +13,7 @@ public class DatabaseManager<H extends OrmLiteSqliteOpenHelper> {
     @SuppressWarnings("unchecked")
     public H getHelper(Context context) {
         if (helper == null) {
-            helper = (H) OpenHelperManager.getHelper(context);
+            helper = (H) OpenHelperManager.getHelper(context,DatabaseHelper.class);
         }
         return helper;
     }
