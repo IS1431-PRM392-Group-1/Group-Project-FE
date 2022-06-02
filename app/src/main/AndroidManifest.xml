@@ -14,7 +14,7 @@
         android:theme="@style/Theme.IS1431PRM392GroupProject"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".modules.auth.controller.AuthController"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
