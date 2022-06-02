@@ -11,7 +11,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class DatabaseInitializer extends SQLiteOpenHelper {
-
     private static String DB_PATH = "/data/data/com.is1431_prm392_group_project.is1431_prm392_group_project/databases/";
     private static String DB_NAME = "db.sqlite";
     private final Context context;
@@ -23,9 +22,7 @@ public class DatabaseInitializer extends SQLiteOpenHelper {
     }
 
     public void createDatabase() throws IOException {
-
         boolean dbExist = checkDatabase();
-
         if (!dbExist) {
             this.getReadableDatabase();
             try {
@@ -34,52 +31,39 @@ public class DatabaseInitializer extends SQLiteOpenHelper {
                 throw new Error("Error copying database");
             }
         }
-
     }
 
     private boolean checkDatabase() {
-
         SQLiteDatabase checkDB = null;
-
         try {
             String myPath = DB_PATH + DB_NAME;
             checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
-
         } catch (SQLiteException e) {
         }
-
         if (checkDB != null) {
             checkDB.close();
         }
-
         return checkDB != null ? true : false;
     }
 
     private void copyDatabase() throws IOException {
-
         InputStream myInput = context.getAssets().open(DB_NAME);
-
         String outFileName = DB_PATH + DB_NAME;
-
         OutputStream myOutput = new FileOutputStream(outFileName);
-
         byte[] buffer = new byte[1024];
         int length;
         while ((length = myInput.read(buffer)) > 0) {
             myOutput.write(buffer, 0, length);
         }
-
         myOutput.flush();
         myOutput.close();
         myInput.close();
-
     }
 
     @Override
     public synchronized void close() {
         if (database != null)
             database.close();
-
         super.close();
     }
 
@@ -90,5 +74,4 @@ public class DatabaseInitializer extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
-
 }

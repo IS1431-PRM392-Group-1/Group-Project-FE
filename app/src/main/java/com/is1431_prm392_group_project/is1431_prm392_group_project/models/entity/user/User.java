@@ -1,26 +1,20 @@
 package com.is1431_prm392_group_project.is1431_prm392_group_project.models.entity.user;
 
-
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.Repo;
 import com.j256.ormlite.field.DatabaseField;
 
 public class User {
-
     @DatabaseField(id = true)
     String username;
     @DatabaseField
     String password;
     @DatabaseField
     String email;
-    @DatabaseField
-    String alias;
 
     public User() {
-
     }
 
-    public User(String alias, String username, String password, String email) {
-        this.alias = alias;
+    public User(String username, String password, String email) {
         this.username = username;
         this.password = password;
         this.email = email;
@@ -50,14 +44,6 @@ public class User {
         this.email = email;
     }
 
-    public String getAlias() {
-        return alias;
-    }
-
-    public void setAlias(String alias) {
-        this.alias = alias;
-    }
-
     public int save(Repo repo) {
         if (repo.Users.getByUsername(username) == null) {
             return repo.Users.create(this);
@@ -69,9 +55,4 @@ public class User {
     public int delete(Repo repo) {
         return repo.Users.delete(this);
     }
-
-    public String toString() {
-        return alias;
-    }
-
 }

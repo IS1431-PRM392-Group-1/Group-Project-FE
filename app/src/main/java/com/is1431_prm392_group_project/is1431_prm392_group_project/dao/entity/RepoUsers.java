@@ -9,9 +9,7 @@ import com.j256.ormlite.stmt.QueryBuilder;
 import java.sql.SQLException;
 import java.util.List;
 
-
 public class RepoUsers {
-
     Dao<User, String> userDao;
 
     public RepoUsers(DatabaseHelper db) {
@@ -56,9 +54,7 @@ public class RepoUsers {
     public User getByUsername(String username) {
         try {
             QueryBuilder<User, String> qb = userDao.queryBuilder();
-
             qb.where().eq("username", username);
-
             PreparedQuery<User> pq = qb.prepare();
             return userDao.queryForFirst(pq);
         } catch (SQLException e) {
@@ -77,5 +73,4 @@ public class RepoUsers {
         }
         return null;
     }
-
 }
