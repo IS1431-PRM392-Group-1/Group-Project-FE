@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.R;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.auth.providers.AuthService;
 
-public class AuthController extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     AuthService service;
     private Button btnLogin;
     private EditText inputLogin;
@@ -29,7 +29,7 @@ public class AuthController extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         bindingView();
         bindingAction();
         this.service = new AuthService(this);
