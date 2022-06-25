@@ -15,10 +15,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        repo = new Repo(this);
-        User user = new User("admin", "12345",
-                "email@gmail.com");
-        user.save(repo);
         Intent i = new Intent(getApplicationContext(), LoginActivity.class);
         startActivity(i);
     }
