@@ -1,7 +1,7 @@
 package com.is1431_prm392_group_project.is1431_prm392_group_project.dao.entity;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.DatabaseHelper;
-import com.is1431_prm392_group_project.is1431_prm392_group_project.models.entity.user.User;
+import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.user.User;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.PreparedQuery;
 import com.j256.ormlite.stmt.QueryBuilder;
