@@ -69,30 +69,5 @@ public class APIHelper {
         return cookie;
     }
 
-    public void ApiResponder(String cookie,String ResponderUrl) throws MalformedURLException, IOException {
-        /*
-         * Create a new HTTP Connection request to responder, pass along Session_ID Cookie
-         */
-        HttpURLConnection httpcon = (HttpURLConnection) ((new URL(this.BaseUrl + ResponderUrl).openConnection()));
-        httpcon.setDoOutput(true);
-        httpcon.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-        httpcon.setRequestProperty("Accept", "application/json");
-        httpcon.setRequestProperty("Cookie", cookie);
-        httpcon.setRequestMethod("POST");
-        httpcon.connect();
-        byte[] outputBytes = new byte[httpcon.getResponseCode()];
-        OutputStream os = httpcon.getOutputStream();
-        os.write(outputBytes);
-        os.close();
-        /*
-         * Read/Output response from server
-         */
-        BufferedReader inreader = new BufferedReader(new InputStreamReader(httpcon.getInputStream()));
-        String decodedString;
-        while ((decodedString = inreader.readLine()) != null) {
-            System.out.println(decodedString);
-        }
-        inreader.close();
-        httpcon.disconnect();
-    }
+
 }
