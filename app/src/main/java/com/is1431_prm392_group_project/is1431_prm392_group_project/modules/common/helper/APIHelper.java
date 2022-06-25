@@ -1,5 +1,7 @@
 package com.is1431_prm392_group_project.is1431_prm392_group_project.modules.common.helper;
 
+import com.is1431_prm392_group_project.is1431_prm392_group_project.BuildConfig;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,17 +13,13 @@ import java.util.ArrayList;
 
 public class APIHelper {
     private String BaseUrl;
-    private String ResponderUrl;
-    private String responderParameters;
 
     /*
      *Constructor sets BaseUrl, ResponderUrl and ResponderParameters properties
      */
     public APIHelper() {
-        this.BaseUrl = "http://app32mlm1/SG757108NOKSQL_1_1/";
-        this.ResponderUrl = "~api/search/room?action=GET";
-        this.responderParameters = "fields=RowNumber%2CId%2CRoomName%2CRoomDescription%2CRoomNumber%2CRoomTypeName%2CBuildingCode%2CBuildingName%2CCampusName%2CCapacity%2CBuildingRoomNumberRoomName%2CCanEdit%2CCanDelete&sortOrder=%2BBuildingRoomNumberRoomName";
-    }
+        this.BaseUrl = BuildConfig.API_KEY;
+       }
 
     public String Login() throws MalformedURLException, IOException {
         /*
@@ -71,18 +69,18 @@ public class APIHelper {
         return cookie;
     }
 
-    public void ApiResponder(String cookie) throws MalformedURLException, IOException {
+    public void ApiResponder(String cookie,String ResponderUrl) throws MalformedURLException, IOException {
         /*
          * Create a new HTTP Connection request to responder, pass along Session_ID Cookie
          */
-        HttpURLConnection httpcon = (HttpURLConnection) ((new URL(this.BaseUrl + this.ResponderUrl).openConnection()));
+        HttpURLConnection httpcon = (HttpURLConnection) ((new URL(this.BaseUrl + ResponderUrl).openConnection()));
         httpcon.setDoOutput(true);
         httpcon.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
         httpcon.setRequestProperty("Accept", "application/json");
         httpcon.setRequestProperty("Cookie", cookie);
         httpcon.setRequestMethod("POST");
         httpcon.connect();
-        byte[] outputBytes = responderParameters.getBytes("UTF-8");
+        byte[] outputBytes = new byte[httpcon.getResponseCode()];
         OutputStream os = httpcon.getOutputStream();
         os.write(outputBytes);
         os.close();
