@@ -1,4 +1,4 @@
-package com.is1431_prm392_group_project.is1431_prm392_group_project.modules.common.network.dto;
+package com.is1431_prm392_group_project.is1431_prm392_group_project.modules.auth.dto;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

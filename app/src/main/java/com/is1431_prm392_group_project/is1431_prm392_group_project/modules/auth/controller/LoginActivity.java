@@ -8,10 +8,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.R;
-import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.auth.providers.AuthService;
+import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.auth.providers.AuthProvider;
 
 public class LoginActivity extends AppCompatActivity {
-    AuthService service;
+    AuthProvider service;
     private Button btnLogin;
     private EditText inputLogin;
     private EditText inputPass;
@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         bindingView();
         bindingAction();
-        this.service = new AuthService(this);
+        this.service = new AuthProvider(this);
     }
 
     public void login() {
