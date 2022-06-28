@@ -1,6 +1,6 @@
 package com.is1431_prm392_group_project.is1431_prm392_group_project.modules.common.helper;
 
-import static com.is1431_prm392_group_project.is1431_prm392_group_project.modules.common.filters.ExceptionsDefineder.HTTP_SENDING_ERROR;
+import static com.is1431_prm392_group_project.is1431_prm392_group_project.modules.common.filters.ExceptionsDefineder.NETWORK_ERROR;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.BuildConfig;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.common.filters.BaseHttpException;
@@ -36,8 +36,7 @@ public class APIHelper {
             os.write(BODY.getBytes());
             os.flush();
             if (conn.getResponseCode() != HttpURLConnection.HTTP_CREATED) {
-                throw new RuntimeException("Failed : HTTP error code : "
-                        + conn.getResponseCode());
+                throw NETWORK_ERROR;
             }
             BufferedReader br = new BufferedReader(new InputStreamReader(
                     (conn.getInputStream())));
@@ -48,10 +47,10 @@ public class APIHelper {
             conn.disconnect();
         } catch (MalformedURLException e) {
             e.printStackTrace();
-            throw HTTP_SENDING_ERROR;
+            throw NETWORK_ERROR;
         } catch (IOException e) {
             e.printStackTrace();
-            throw HTTP_SENDING_ERROR;
+            throw NETWORK_ERROR;
         }
         return respone;
     }
