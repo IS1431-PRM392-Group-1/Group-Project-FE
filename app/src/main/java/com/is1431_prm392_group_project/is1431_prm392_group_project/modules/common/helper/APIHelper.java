@@ -5,6 +5,7 @@ import static com.is1431_prm392_group_project.is1431_prm392_group_project.module
 
 import android.os.AsyncTask;
 
+import com.google.gson.Gson;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.BuildConfig;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.common.filters.BaseHttpException;
 
@@ -18,12 +19,12 @@ import java.net.URL;
 
 public class APIHelper extends AsyncTask<String,Integer,JsonObjectResponse> {
     private String BaseUrl;
-
+private Gson gson;
     /*
      *Constructor sets BaseUrl
      */
     public APIHelper() {
-        this.BaseUrl = BuildConfig.API_KEY;
+        this.BaseUrl = BuildConfig.API_KEY;gson= new Gson();
     }
 
     @Override
@@ -32,7 +33,7 @@ public class APIHelper extends AsyncTask<String,Integer,JsonObjectResponse> {
     }
 
 
-    public String CallAPI(String URL, String METHOD, String BODY) throws BaseHttpException {
+    public JsonObjectResponse CallAPI(String URL, String METHOD, String BODY) throws BaseHttpException {
         String respone = "";
         try {
             /*
@@ -67,14 +68,14 @@ public class APIHelper extends AsyncTask<String,Integer,JsonObjectResponse> {
             e.printStackTrace();
             throw NETWORK_ERROR;
         }
-        return respone;
+        return gson.fromJson(respone, JsonObjectResponse.class);;
     }
 
-    public String DoPost(String URL, String BODY) throws BaseHttpException {
+    public JsonObjectResponse DoPost(String URL, String BODY) throws BaseHttpException {
         return this.CallAPI(URL, "POST", BODY);
     }
 
-    public String DoGet(String URL, String BODY) throws BaseHttpException {
+    public JsonObjectResponse DoGet(String URL, String BODY) throws BaseHttpException {
         return this.CallAPI(URL, "GET", BODY);
     }
 }
