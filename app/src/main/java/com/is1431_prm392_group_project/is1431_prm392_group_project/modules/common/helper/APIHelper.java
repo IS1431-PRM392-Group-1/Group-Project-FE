@@ -22,8 +22,9 @@ public class APIHelper {
     public APIHelper() {
         this.BaseUrl = BuildConfig.API_KEY;
     }
+
     public String CallAPI(String URL, String METHOD, String BODY) throws BaseHttpException {
-        String respone="";
+        String respone = "";
         try {
             /*
              * Open an HTTP Connection to the Logon.ashx page
@@ -35,14 +36,19 @@ public class APIHelper {
             OutputStream os = conn.getOutputStream();
             os.write(BODY.getBytes());
             os.flush();
-            if (conn.getResponseCode() != HttpURLConnection.HTTP_CREATED) {
-                throw NETWORK_ERROR;
-            }
-            BufferedReader br = new BufferedReader(new InputStreamReader(
-                    (conn.getInputStream())));
             String output;
-            while ((output = br.readLine()) != null) {
-                respone=respone+output;
+            if (conn.getResponseCode() != HttpURLConnection.HTTP_CREATED) {
+                BufferedReader br = new BufferedReader(new InputStreamReader(
+                        (conn.getErrorStream())));
+                while ((output = br.readLine()) != null) {
+                    respone = respone + output;
+                }
+            } else {
+                BufferedReader br = new BufferedReader(new InputStreamReader(
+                        (conn.getInputStream())));
+                while ((output = br.readLine()) != null) {
+                    respone = respone + output;
+                }
             }
             conn.disconnect();
         } catch (MalformedURLException e) {
@@ -56,10 +62,10 @@ public class APIHelper {
     }
 
     public String DoPost(String URL, String BODY) throws BaseHttpException {
-       return this.CallAPI(URL,"POST",BODY);
+        return this.CallAPI(URL, "POST", BODY);
     }
 
     public String DoGet(String URL, String BODY) throws BaseHttpException {
-        return this.CallAPI(URL,"GET",BODY);
+        return this.CallAPI(URL, "GET", BODY);
     }
 }
