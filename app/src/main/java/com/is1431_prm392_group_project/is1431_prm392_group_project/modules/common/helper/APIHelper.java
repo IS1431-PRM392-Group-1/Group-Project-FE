@@ -3,8 +3,6 @@ package com.is1431_prm392_group_project.is1431_prm392_group_project.modules.comm
 
 import static com.is1431_prm392_group_project.is1431_prm392_group_project.modules.common.filters.ExceptionsDefineder.NETWORK_ERROR;
 
-import android.os.AsyncTask;
-
 import com.google.gson.Gson;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.BuildConfig;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.common.filters.BaseHttpException;
@@ -17,7 +15,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class APIHelper extends AsyncTask<String,Integer,JsonObjectResponse> {
+public class APIHelper  {
     private String BaseUrl;
 private Gson gson;
     /*
@@ -27,10 +25,6 @@ private Gson gson;
         this.BaseUrl = BuildConfig.API_KEY;gson= new Gson();
     }
 
-    @Override
-    protected JsonObjectResponse doInBackground(String... strings) {
-        return null;
-    }
 
 
     public JsonObjectResponse CallAPI(String URL, String METHOD, String BODY) throws BaseHttpException {
@@ -68,14 +62,14 @@ private Gson gson;
             e.printStackTrace();
             throw NETWORK_ERROR;
         }
-        return gson.fromJson(respone, JsonObjectResponse.class);;
+        return gson.fromJson(respone, JsonObjectResponse.class);
     }
 
     public JsonObjectResponse DoPost(String URL, String BODY) throws BaseHttpException {
         return this.CallAPI(URL, "POST", BODY);
     }
 
-    public JsonObjectResponse DoGet(String URL, String BODY) throws BaseHttpException {
+    public JsonObjectResponse    DoGet(String URL, String BODY) throws BaseHttpException {
         return this.CallAPI(URL, "GET", BODY);
     }
 }
