@@ -17,7 +17,7 @@ public class APIHelper {
     private String BaseUrl;
 
     /*
-     *Constructor sets BaseUrl, ResponderUrl and ResponderParameters properties
+     *Constructor sets BaseUrl
      */
     public APIHelper() {
         this.BaseUrl = BuildConfig.API_KEY;
