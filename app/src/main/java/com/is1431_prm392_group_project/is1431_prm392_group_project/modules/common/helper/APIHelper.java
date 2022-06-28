@@ -1,6 +1,9 @@
 package com.is1431_prm392_group_project.is1431_prm392_group_project.modules.common.helper;
 
+
 import static com.is1431_prm392_group_project.is1431_prm392_group_project.modules.common.filters.ExceptionsDefineder.NETWORK_ERROR;
+
+import android.os.AsyncTask;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.BuildConfig;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.common.filters.BaseHttpException;
@@ -13,7 +16,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class APIHelper {
+public class APIHelper extends AsyncTask<String,Integer,JsonObjectResponse> {
     private String BaseUrl;
 
     /*
@@ -22,6 +25,12 @@ public class APIHelper {
     public APIHelper() {
         this.BaseUrl = BuildConfig.API_KEY;
     }
+
+    @Override
+    protected JsonObjectResponse doInBackground(String... strings) {
+        return null;
+    }
+
 
     public String CallAPI(String URL, String METHOD, String BODY) throws BaseHttpException {
         String respone = "";
