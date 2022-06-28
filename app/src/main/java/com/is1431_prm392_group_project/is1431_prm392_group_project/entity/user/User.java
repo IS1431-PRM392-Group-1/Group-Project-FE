@@ -12,10 +12,9 @@ public class User {
     String password;
     @DatabaseField
     String email;
+
     public User(String JSON) {
-
     }
-
 
     public User(String username, String password, String email) {
         this.username = username;
@@ -54,6 +53,7 @@ public class User {
             return repo.Users.update(this);
         }
     }
+
     public int update(Repo repo) throws Exception {
         if (repo.Users.getByUsername(username) == null) {
             throw USER_NOT_FOUND;
