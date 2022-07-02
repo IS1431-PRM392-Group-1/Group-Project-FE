@@ -4,19 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_home">
+    <activity
+        android:id="@+id/nav_login"
+        android:name="com.is1431_prm392_group_project.is1431_prm392_group_project.modules.auth.controller.LoginActivity"
+        />
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.is1431_prm392_group_project.is1431_prm392_group_project.modules.home.controller.WorkoutListFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_workout_list" />
+        android:name="com.is1431_prm392_group_project.is1431_prm392_group_project.modules.home.controller.ReportFragment"
+        android:label="@string/menu_report"
+        tools:layout="@layout/fragment_report" />
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.is1431_prm392_group_project.is1431_prm392_group_project.modules.home.controller.ReportFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_report" />
+        android:name="com.is1431_prm392_group_project.is1431_prm392_group_project.modules.home.controller.WorkoutListFragment"
+        android:label="@string/menu_workout_list"
+        tools:layout="@layout/fragment_workout_list" />
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.is1431_prm392_group_project.is1431_prm392_group_project.modules.home.controller.DiscoverFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_discover"
         tools:layout="@layout/fragment_discover" />
 </navigation>

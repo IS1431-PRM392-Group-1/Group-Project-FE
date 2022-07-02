@@ -13,7 +13,7 @@ public class User {
     @DatabaseField
     String email;
 
-    public User(String JSON) {
+    public User() {
     }
 
     public User(String username, String password, String email) {

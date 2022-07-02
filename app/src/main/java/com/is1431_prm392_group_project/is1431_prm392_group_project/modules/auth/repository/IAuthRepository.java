@@ -12,5 +12,4 @@ public interface IAuthRepository {
     Call<LoginDto> login(@Body LoginDto loginDto);
 
 
-
 }

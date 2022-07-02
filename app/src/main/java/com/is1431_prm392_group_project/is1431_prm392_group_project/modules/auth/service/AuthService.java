@@ -9,11 +9,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class AuthService {
     private static final String BASE_URL = BuildConfig.API_KEY;
     private static AuthService services;
-
-    public IAuthRepository getAuthApiRepository() {
-        return authApiRepository;
-    }
-
     private IAuthRepository authApiRepository;
 
     private AuthService() {
@@ -29,6 +24,9 @@ public class AuthService {
         return services;
     }
 
+    public IAuthRepository getAuthApiRepository() {
+        return authApiRepository;
+    }
 
 
 }

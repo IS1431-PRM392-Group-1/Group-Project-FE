@@ -4,6 +4,13 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class LoginDto {
+    @SerializedName("username")
+    @Expose
+    private Integer username;
+    @SerializedName("password")
+    @Expose
+    private Integer password;
+
     public Integer getUsername() {
         return username;
     }
@@ -12,10 +19,6 @@ public class LoginDto {
         this.username = username;
     }
 
-    @SerializedName("username")
-    @Expose
-    private Integer username;
-
     public Integer getPassword() {
         return password;
     }
@@ -23,8 +26,4 @@ public class LoginDto {
     public void setPassword(Integer password) {
         this.password = password;
     }
-
-    @SerializedName("password")
-    @Expose
-    private Integer password;
 }
