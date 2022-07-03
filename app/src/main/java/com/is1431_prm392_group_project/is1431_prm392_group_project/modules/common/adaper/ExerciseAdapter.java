@@ -8,13 +8,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.demo;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.models.entity.exercise.Exercise;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.R;
+import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.exercise.controller.ExersiceDetail;
 
 import java.util.ArrayList;
 
@@ -23,6 +28,12 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
     Context context;
     ArrayList<Exercise> exercises;
     LayoutInflater inflater;
+
+
+    ExersiceDetail fragDetail;
+    FragmentManager fragManager;
+    FragmentTransaction transaction;
+
 
     public ExerciseAdapter(Context context, ArrayList<Exercise> exercises) {
         this.context = context;
@@ -44,13 +55,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
         holder.textTime.setText(exercise.getTime());
         holder.txt_perday.setText(exercise.getPerday());
 
-        holder.btn_exercise_detail.setOnClickListener(view -> {
-            //show fragment
-            //demo start a activity
-            Intent intent = new Intent(context ,demo.class);
-            context.startActivity(intent);
-
-        });
+        holder.btn_exercise_detail.setOnClickListener(this::onClickShowFragment);
 
         holder.btn_start_exercise.setOnClickListener(view -> {
             //this is activity start exercise
@@ -58,6 +63,14 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
             Intent intent = new Intent(context ,demo.class);
             context.startActivity(intent);
         });
+    }
+
+    private void onClickShowFragment(View view) {
+        //show fragment
+        //demo start a activity
+        AppCompatActivity activity = (AppCompatActivity) view.getContext();
+        fragDetail = new ExersiceDetail();
+        activity.getSupportFragmentManager().beginTransaction().replace(R.id.exerciseActivity, fragDetail).addToBackStack(null).commit();
     }
 
     @Override
