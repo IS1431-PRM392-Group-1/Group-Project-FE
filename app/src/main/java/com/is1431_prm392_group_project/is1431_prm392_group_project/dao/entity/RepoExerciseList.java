@@ -1,7 +1,7 @@
 package com.is1431_prm392_group_project.is1431_prm392_group_project.dao.entity;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.DatabaseHelper;
-import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.user.User;
+import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exercise.ExerciseList;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.PreparedQuery;
 import com.j256.ormlite.stmt.QueryBuilder;
@@ -9,31 +9,21 @@ import com.j256.ormlite.stmt.QueryBuilder;
 import java.sql.SQLException;
 import java.util.List;
 
-public class RepoUsers {
-    Dao<User, String> userDao;
+public class RepoExerciseList {
+    Dao<ExerciseList, Integer> exerciseListDao;
 
-    public RepoUsers(DatabaseHelper db) {
+    public RepoExerciseList(DatabaseHelper db) {
         try {
-            userDao = db.getUserDao();
+            exerciseListDao = db.getExerciseListDao();
         } catch (SQLException e) {
             // TODO: Exception Handling
             e.printStackTrace();
         }
     }
 
-    public int create(User user) {
+    public int create(ExerciseList exerciseList) {
         try {
-            return userDao.create(user);
-        } catch (SQLException e) {
-            // TODO: Exception Handling
-            e.printStackTrace();
-        }
-        return 0;
-    }
-
-    public int update(User user) {
-        try {
-            return userDao.update(user);
+            return exerciseListDao.create(exerciseList);
         } catch (SQLException e) {
             // TODO: Exception Handling
             e.printStackTrace();
@@ -41,9 +31,9 @@ public class RepoUsers {
         return 0;
     }
 
-    public int delete(User user) {
+    public int update(ExerciseList exerciseList) {
         try {
-            return userDao.delete(user);
+            return exerciseListDao.update(exerciseList);
         } catch (SQLException e) {
             // TODO: Exception Handling
             e.printStackTrace();
@@ -51,12 +41,22 @@ public class RepoUsers {
         return 0;
     }
 
-    public User getByUsername(String username) {
+    public int delete(ExerciseList exerciseList) {
         try {
-            QueryBuilder<User, String> qb = userDao.queryBuilder();
-            qb.where().eq("username", username);
-            PreparedQuery<User> pq = qb.prepare();
-            return userDao.queryForFirst(pq);
+            return exerciseListDao.delete(exerciseList);
+        } catch (SQLException e) {
+            // TODO: Exception Handling
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    public ExerciseList getByID(int id) {
+        try {
+            QueryBuilder<ExerciseList, Integer> qb = exerciseListDao.queryBuilder();
+            qb.where().eq("id", id);
+            PreparedQuery<ExerciseList> pq = qb.prepare();
+            return exerciseListDao.queryForFirst(pq);
         } catch (SQLException e) {
             // TODO: Exception Handling
             e.printStackTrace();
@@ -64,9 +64,9 @@ public class RepoUsers {
         return null;
     }
 
-    public List<User> getAll() {
+    public List<ExerciseList> getAll() {
         try {
-            return userDao.queryForAll();
+            return exerciseListDao.queryForAll();
         } catch (SQLException e) {
             // TODO: Exception Handling
             e.printStackTrace();

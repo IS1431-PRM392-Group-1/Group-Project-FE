@@ -1,4 +1,6 @@
-package com.is1431_prm392_group_project.is1431_prm392_group_project.models.entity.user;
+package com.is1431_prm392_group_project.is1431_prm392_group_project.entity.user;
+
+import static com.is1431_prm392_group_project.is1431_prm392_group_project.modules.common.filters.ExceptionsDefineder.USER_NOT_FOUND;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.Repo;
 import com.j256.ormlite.field.DatabaseField;
@@ -44,9 +46,17 @@ public class User {
         this.email = email;
     }
 
-    public int save(Repo repo) {
+    private int save(Repo repo) {
         if (repo.Users.getByUsername(username) == null) {
             return repo.Users.create(this);
+        } else {
+            return repo.Users.update(this);
+        }
+    }
+
+    public int update(Repo repo) throws Exception {
+        if (repo.Users.getByUsername(username) == null) {
+            throw USER_NOT_FOUND;
         } else {
             return repo.Users.update(this);
         }

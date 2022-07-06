@@ -4,10 +4,10 @@ import android.content.Context;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.Repo;
 
-public abstract class IAuthService {
+public abstract class IAuthProvider {
     protected Repo repo;
 
-    public IAuthService(Context context) {
+    public IAuthProvider(Context context) {
         this.repo = new Repo(context);
     }
 

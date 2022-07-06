@@ -7,9 +7,6 @@
     <!--EditText for user name or email address-->
 
 
-
-
-
     <EditText
         android:id="@+id/input_login"
         android:layout_width="match_parent"

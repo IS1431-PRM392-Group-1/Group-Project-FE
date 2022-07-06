@@ -1,7 +1,7 @@
 package com.is1431_prm392_group_project.is1431_prm392_group_project.dao.entity;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.DatabaseHelper;
-import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.user.User;
+import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.report.PersonalReport;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.PreparedQuery;
 import com.j256.ormlite.stmt.QueryBuilder;
@@ -9,31 +9,21 @@ import com.j256.ormlite.stmt.QueryBuilder;
 import java.sql.SQLException;
 import java.util.List;
 
-public class RepoUsers {
-    Dao<User, String> userDao;
+public class RepoPersonalReport {
+    Dao<PersonalReport, Integer> personalReportDeo;
 
-    public RepoUsers(DatabaseHelper db) {
+    public RepoPersonalReport(DatabaseHelper db) {
         try {
-            userDao = db.getUserDao();
+            personalReportDeo = db.getPersonalReportDao();
         } catch (SQLException e) {
             // TODO: Exception Handling
             e.printStackTrace();
         }
     }
 
-    public int create(User user) {
+    public int create(PersonalReport practiceReport) {
         try {
-            return userDao.create(user);
-        } catch (SQLException e) {
-            // TODO: Exception Handling
-            e.printStackTrace();
-        }
-        return 0;
-    }
-
-    public int update(User user) {
-        try {
-            return userDao.update(user);
+            return personalReportDeo.create(practiceReport);
         } catch (SQLException e) {
             // TODO: Exception Handling
             e.printStackTrace();
@@ -41,9 +31,9 @@ public class RepoUsers {
         return 0;
     }
 
-    public int delete(User user) {
+    public int update(PersonalReport practiceReport) {
         try {
-            return userDao.delete(user);
+            return personalReportDeo.update(practiceReport);
         } catch (SQLException e) {
             // TODO: Exception Handling
             e.printStackTrace();
@@ -51,12 +41,22 @@ public class RepoUsers {
         return 0;
     }
 
-    public User getByUsername(String username) {
+    public int delete(PersonalReport practiceReport) {
         try {
-            QueryBuilder<User, String> qb = userDao.queryBuilder();
-            qb.where().eq("username", username);
-            PreparedQuery<User> pq = qb.prepare();
-            return userDao.queryForFirst(pq);
+            return personalReportDeo.delete(practiceReport);
+        } catch (SQLException e) {
+            // TODO: Exception Handling
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    public PersonalReport getByID(int id) {
+        try {
+            QueryBuilder<PersonalReport, Integer> qb = personalReportDeo.queryBuilder();
+            qb.where().eq("id", id);
+            PreparedQuery<PersonalReport> pq = qb.prepare();
+            return personalReportDeo.queryForFirst(pq);
         } catch (SQLException e) {
             // TODO: Exception Handling
             e.printStackTrace();
@@ -64,9 +64,9 @@ public class RepoUsers {
         return null;
     }
 
-    public List<User> getAll() {
+    public List<PersonalReport> getAll() {
         try {
-            return userDao.queryForAll();
+            return personalReportDeo.queryForAll();
         } catch (SQLException e) {
             // TODO: Exception Handling
             e.printStackTrace();
