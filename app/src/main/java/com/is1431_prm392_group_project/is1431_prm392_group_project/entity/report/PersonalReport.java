@@ -6,14 +6,21 @@ import com.j256.ormlite.field.DatabaseField;
 import java.sql.Date;
 
 public class PersonalReport {
-    public int getId() {
-        return id;
-    }
-
     @DatabaseField(id = true, generatedId = true)
     int id;
     @DatabaseField
     double weight;
+    @DatabaseField
+    double height;
+    @DatabaseField
+    Date date;
+
+    public PersonalReport() {
+    }
+
+    public int getId() {
+        return id;
+    }
 
     public double getWeight() {
         return weight;
@@ -31,9 +38,6 @@ public class PersonalReport {
         this.height = height;
     }
 
-    @DatabaseField
-    double height;
-
     public Date getDate() {
         return date;
     }
@@ -41,12 +45,6 @@ public class PersonalReport {
     public void setDate(Date date) {
         this.date = date;
     }
-
-    @DatabaseField
-    Date date;
-    public PersonalReport() {
-    }
-
 
     private int save(Repo repo) {
         if (repo.personalReport.getByID(id) == null) {

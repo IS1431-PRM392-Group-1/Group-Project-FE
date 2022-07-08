@@ -6,12 +6,19 @@ import com.j256.ormlite.field.DatabaseField;
 import java.sql.Date;
 
 public class PracticeReport {
+    @DatabaseField(id = true, generatedId = true)
+    int id;
+    @DatabaseField
+    double calo;
+    @DatabaseField
+    Date date;
+
+    public PracticeReport() {
+    }
+
     public int getId() {
         return id;
     }
-
-    @DatabaseField(id = true, generatedId = true)
-    int id;
 
     public double getCalo() {
         return calo;
@@ -21,11 +28,6 @@ public class PracticeReport {
         this.calo = calo;
     }
 
-    @DatabaseField
-    double calo;
-
-
-
     public Date getDate() {
         return date;
     }
@@ -33,12 +35,6 @@ public class PracticeReport {
     public void setDate(Date date) {
         this.date = date;
     }
-
-    @DatabaseField
-    Date date;
-    public PracticeReport() {
-    }
-
 
     private int save(Repo repo) {
         if (repo.practiceReport.getByID(id) == null) {

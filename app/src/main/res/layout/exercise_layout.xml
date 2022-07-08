@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="#fff"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#fff">
 
 
     <ScrollView
@@ -30,8 +30,7 @@
                     android:layout_height="150dp"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
 
 
                     <LinearLayout
@@ -49,7 +48,7 @@
                             android:text="After 18 year"
                             android:textColor="@color/black"
                             android:textSize="20dp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/text_time_exercise"
@@ -58,8 +57,8 @@
                             android:fontFamily="serif"
                             android:padding="5dp"
                             android:text="Days 60"
-                            android:textSize="18dp"
                             android:textColor="#ff000000"
+                            android:textSize="18dp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -69,8 +68,7 @@
                             android:padding="5dp"
                             android:text="Every 15 min"
                             android:textColor="#ff00"
-                            android:textStyle="bold"
-                            />
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -82,7 +80,7 @@
                         <pl.droidsonroids.gif.GifImageView
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/exersice_8"/>
+                            android:src="@drawable/exersice_8" />
 
 
                     </LinearLayout>
@@ -90,20 +88,19 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.0"
-                        >
+                        android:layout_weight="0.0">
 
                         <ImageView
                             android:id="@+id/btn_view_detail"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="10dp"
-                            android:src="@drawable/ic_baseline_arrow_forward"
-                            />
+                            android:src="@drawable/ic_baseline_arrow_forward" />
 
                     </LinearLayout>
 
                 </LinearLayout>
+
                 <Button
                     android:id="@+id/btn_start_exercise"
                     android:layout_width="fill_parent"
@@ -112,8 +109,7 @@
                     android:background="@drawable/btnexercise"
                     android:text="Get Start"
                     android:textAllCaps="true"
-                    android:textColor="#fff"
-                    />
+                    android:textColor="#fff" />
 
 
             </LinearLayout>

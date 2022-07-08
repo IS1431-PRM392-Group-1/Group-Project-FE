@@ -6,12 +6,19 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.ForeignCollectionField;
 
 public class ExerciseList {
+    @DatabaseField(id = true, generatedId = true)
+    int id;
+    @DatabaseField
+    String name;
+    @ForeignCollectionField(eager = false)
+    private ForeignCollection<Exercise> list;
+
+    public ExerciseList() {
+    }
+
     public int getId() {
         return id;
     }
-
-    @DatabaseField(id = true, generatedId = true)
-    int id;
 
     public String getName() {
         return name;
@@ -21,9 +28,6 @@ public class ExerciseList {
         this.name = name;
     }
 
-    @DatabaseField
-    String name;
-
     public ForeignCollection<Exercise> getList() {
         return list;
     }
@@ -31,12 +35,6 @@ public class ExerciseList {
     public void setList(ForeignCollection<Exercise> list) {
         this.list = list;
     }
-
-    @ForeignCollectionField(eager = false)
-    private ForeignCollection<Exercise> list;
-    public ExerciseList() {
-    }
-
 
     private int save(Repo repo) {
         if (repo.exerciseList.getByID(id) == null) {
