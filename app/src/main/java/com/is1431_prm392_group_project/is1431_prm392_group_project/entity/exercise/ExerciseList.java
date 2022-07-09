@@ -9,8 +9,7 @@ import com.j256.ormlite.field.ForeignCollectionField;
 import java.util.Map;
 
 public class ExerciseList {
-<<<<<<< Updated upstream
-=======
+
     @DatabaseField(id = true, generatedId = true)
     int id;
     @DatabaseField
@@ -21,13 +20,11 @@ public class ExerciseList {
     public ExerciseList() {
     }
 
->>>>>>> Stashed changes
+
     public int getId() {
         return id;
     }
 
-    @DatabaseField(id = true, generatedId = true)
-    int id;
 
     public String getName() {
         return name;
@@ -36,27 +33,16 @@ public class ExerciseList {
     public void setName(String name) {
         this.name = name;
     }
+    
 
-<<<<<<< Updated upstream
-    @DatabaseField
-    String name;
-
-    public ForeignCollection<Exercise> getList() {
-=======
     public Map<Exercise, Integer> getList() {
->>>>>>> Stashed changes
+
         return list;
     }
 
     public void setList(Map<Exercise, Integer> list) {
         this.list = list;
     }
-
-    @ForeignCollectionField(eager = false)
-    private ForeignCollection<Exercise> list;
-    public ExerciseList() {
-    }
-
 
     private int save(Repo repo) {
         if (repo.exerciseList.getByID(id) == null) {
