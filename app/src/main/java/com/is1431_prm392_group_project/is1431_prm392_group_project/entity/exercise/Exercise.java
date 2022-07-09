@@ -22,6 +22,17 @@ public class Exercise {
     @DatabaseField
     String name;
 
+    public double getCalo() {
+        return calo;
+    }
+
+    public void setCalo(double calo) {
+        this.calo = calo;
+    }
+
+    @DatabaseField()
+    double calo;
+
     public Exercise() {
     }
 

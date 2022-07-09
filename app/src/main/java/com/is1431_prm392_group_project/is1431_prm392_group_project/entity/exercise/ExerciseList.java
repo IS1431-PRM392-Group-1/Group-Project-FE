@@ -33,7 +33,7 @@ public class ExerciseList {
     public void setName(String name) {
         this.name = name;
     }
-    
+
 
     public Map<Exercise, Integer> getList() {
 
