@@ -10,9 +10,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.databinding.FragmentWorkoutListBinding;
+import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.home.providers.HomeProvider;
 
 public class WorkoutListFragment extends Fragment {
     private FragmentWorkoutListBinding binding;
+    private HomeProvider provider;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -20,6 +22,7 @@ public class WorkoutListFragment extends Fragment {
         View root = binding.getRoot();
         final TextView textView = binding.textHome;
         textView.setText("Welcome");
+        provider = new HomeProvider(getContext());
         return root;
     }
 

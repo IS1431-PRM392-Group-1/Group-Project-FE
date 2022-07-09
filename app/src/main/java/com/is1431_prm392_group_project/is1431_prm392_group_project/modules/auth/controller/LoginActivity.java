@@ -11,7 +11,7 @@ import com.is1431_prm392_group_project.is1431_prm392_group_project.R;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.auth.providers.AuthProvider;
 
 public class LoginActivity extends AppCompatActivity {
-    AuthProvider service;
+    AuthProvider provider;
     private Button btnLogin;
     private EditText inputLogin;
     private EditText inputPass;
@@ -32,11 +32,11 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         bindingView();
         bindingAction();
-        this.service = new AuthProvider(this);
+        this.provider = new AuthProvider(this);
     }
 
     public void login() {
-        if (service.login(inputLogin.getText().toString(), inputPass.getText().toString())) {
+        if (provider.login(inputLogin.getText().toString(), inputPass.getText().toString())) {
             Toast.makeText(this, "Login done", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "Login failed", Toast.LENGTH_SHORT).show();
