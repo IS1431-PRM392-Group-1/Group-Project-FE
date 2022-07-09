@@ -42,6 +42,10 @@
             android:exported="false"
             android:label="@string/title_activity_main2"
             android:theme="@style/Theme.IS1431PRM392GroupProject.NoActionBar" />
+        <activity
+            android:name=".modules.home.controller.DiscoverFragment"
+            android:exported="false"
+    />
     </application>
 
 </manifest>

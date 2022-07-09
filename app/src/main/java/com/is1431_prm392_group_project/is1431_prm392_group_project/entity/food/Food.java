@@ -3,7 +3,11 @@ package com.is1431_prm392_group_project.is1431_prm392_group_project.entity.food;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.Repo;
 import com.j256.ormlite.field.DatabaseField;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 public class Food {
+    NumberFormat format = new DecimalFormat("0.#");
     public int getId() {
         return id;
     }
@@ -22,8 +26,8 @@ public class Food {
     @DatabaseField
     String name;
 
-    public double getCalo() {
-        return calo;
+    public String getCalo() {
+        return format.format(calo);
     }
 
     public void setCalo(double calo) {
@@ -34,6 +38,11 @@ public class Food {
     double calo;
 
     public Food() {
+    }
+
+    public Food(String name,double calo) {
+        this.name = name;
+        this.calo = calo;
     }
 
 
