@@ -17,7 +17,6 @@ import com.google.android.material.snackbar.Snackbar;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.R;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.databinding.ActivityHomeMenuBinding;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.databinding.HomeMenuBarBinding;
-import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.auth.controller.LoginActivity;
 
 public class HomeMenu extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
