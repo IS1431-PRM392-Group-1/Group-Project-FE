@@ -5,9 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".modules.auth.controller.RegisterFragment">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+    <LinearLayout
+        android:layout_width="510dp"
+        android:layout_height="906dp"
         android:background="@drawable/image1"
         android:orientation="vertical">
         <!--EditText for user name or email address-->
@@ -96,7 +96,7 @@
                 android:layout_marginTop="35dp"
                 android:backgroundTint="#FF00897B"
                 android:padding="10dp"
-                android:text="Signup"
+                android:text="Register"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
