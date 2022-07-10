@@ -26,6 +26,6 @@ public class Repo {
         personalReport = new RepoPersonalReport(db);
         exercise = new RepoExercise(db);
         exerciseList = new RepoExerciseList(db);
-        food= new RepoFood(db);
+        food = new RepoFood(db);
     }
 }

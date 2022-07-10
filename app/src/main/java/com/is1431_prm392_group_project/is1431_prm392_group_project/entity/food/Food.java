@@ -4,12 +4,19 @@ import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.Repo;
 import com.j256.ormlite.field.DatabaseField;
 
 public class Food {
+    @DatabaseField(id = true, generatedId = true)
+    int id;
+    @DatabaseField
+    String name;
+    @DatabaseField
+    double calo;
+
+    public Food() {
+    }
+
     public int getId() {
         return id;
     }
-
-    @DatabaseField(id = true, generatedId = true)
-    int id;
 
     public String getName() {
         return name;
@@ -19,9 +26,6 @@ public class Food {
         this.name = name;
     }
 
-    @DatabaseField
-    String name;
-
     public double getCalo() {
         return calo;
     }
@@ -29,13 +33,6 @@ public class Food {
     public void setCalo(double calo) {
         this.calo = calo;
     }
-
-    @DatabaseField
-    double calo;
-
-    public Food() {
-    }
-
 
     private int save(Repo repo) {
         if (repo.food.getByID(id) == null) {

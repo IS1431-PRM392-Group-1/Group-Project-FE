@@ -2,7 +2,6 @@ package com.is1431_prm392_group_project.is1431_prm392_group_project.dao.entity;
 
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.DatabaseHelper;
-import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exercise.Exercise;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.food.Food;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.PreparedQuery;
