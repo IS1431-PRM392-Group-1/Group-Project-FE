@@ -14,12 +14,6 @@
         android:theme="@style/Theme.IS1431PRM392GroupProject"
         tools:targetApi="31">
         <activity
-            android:name=".demo"
-            android:exported="false" />
-        <activity
-            android:name=".modules.exercise.controller.ExerciseActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -30,18 +24,20 @@
         </activity>
         <activity
             android:name=".modules.auth.controller.LoginActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".modules.auth.controller.RegisterActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".modules.auth.controller.ForgotPasswordActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".modules.home.controller.HomeMenu"
             android:exported="false"
-            android:label="@string/title_activity_main2"
             android:theme="@style/Theme.IS1431PRM392GroupProject.NoActionBar" />
+        <activity
+            android:name=".modules.exercise.controller.ExerciseActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
