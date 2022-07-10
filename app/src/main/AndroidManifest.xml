@@ -32,5 +32,9 @@
         <activity
             android:name=".modules.auth.controller.AuthActivity"
             android:exported="false" />
+        <activity
+            android:name=".modules.home.controller.DiscoverFragment"
+            android:exported="false" />
+
     </application>
 </manifest>
