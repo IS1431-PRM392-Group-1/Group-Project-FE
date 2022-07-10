@@ -17,13 +17,11 @@ import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.commo
 import java.util.ArrayList;
 
 public class ExersiceDetail extends Fragment {
-
     private RecyclerView rc_ExerciseDetail;
     private ArrayList<ExerciseDetail> exercises;
 
     public ExersiceDetail() {
         // Required empty public constructor
-
     }
 
     @Override
@@ -33,15 +31,12 @@ public class ExersiceDetail extends Fragment {
         View view = inflater.inflate(R.layout.fragment_exersice_detail, container, false);
         rc_ExerciseDetail = view.findViewById(R.id.rc_detail);
         rc_ExerciseDetail.setLayoutManager(new LinearLayoutManager(getContext()));
-
         exercises = new ArrayList<>();
         exercises.add(new ExerciseDetail(1, "After 18 age", 2, 15));
         exercises.add(new ExerciseDetail(2, "After 18 age", 2, 15));
         exercises.add(new ExerciseDetail(3, "After 18 age", 2, 15));
         Log.d("De1001", "onCreateView: " + exercises.get(1).getName());
-
         rc_ExerciseDetail.setAdapter(new ExerciseDetailAdapter(getContext(), exercises));
         return view;
     }
-
 }

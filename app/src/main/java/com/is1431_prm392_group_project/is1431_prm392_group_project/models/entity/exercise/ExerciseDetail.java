@@ -7,7 +7,6 @@ public class ExerciseDetail {
     private int time;
 
     public ExerciseDetail() {
-
     }
 
     public ExerciseDetail(int id, String name, int times, int time) {

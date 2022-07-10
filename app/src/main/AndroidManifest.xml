@@ -13,15 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IS1431PRM392GroupProject"
         tools:targetApi="31">
-        <activity
-            android:name=".AuthActivity"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -32,6 +29,8 @@
         <activity
             android:name=".modules.exercise.controller.ExerciseActivity"
             android:exported="false" />
+        <activity
+            android:name=".modules.auth.controller.AuthActivity"
+            android:exported="false" />
     </application>
-
 </manifest>

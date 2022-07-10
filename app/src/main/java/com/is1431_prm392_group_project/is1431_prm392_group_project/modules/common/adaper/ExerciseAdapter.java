@@ -23,16 +23,12 @@ import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.exerc
 import java.util.ArrayList;
 
 public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder> {
-
     Context context;
     ArrayList<Exercise> exercises;
     LayoutInflater inflater;
-
-
     ExersiceDetail fragDetail;
     FragmentManager fragManager;
     FragmentTransaction transaction;
-
 
     public ExerciseAdapter(Context context, ArrayList<Exercise> exercises) {
         this.context = context;
@@ -54,9 +50,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
         holder.txtName.setText(exercise.getName());
         holder.textTime.setText(exercise.getTime());
         holder.txt_perday.setText(exercise.getPerday());
-
         holder.btn_exercise_detail.setOnClickListener(this::onClickShowFragment);
-
         holder.btn_start_exercise.setOnClickListener(view -> {
             //this is activity start exercise
             //demo start a activity
@@ -79,7 +73,6 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
     }
 
     public class ExerciseViewHolder extends RecyclerView.ViewHolder {
-
         private ImageView btn_exercise_detail;
         private TextView txtName, textTime, txt_perday;
         private Button btn_start_exercise;
@@ -97,5 +90,4 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
             btn_start_exercise = exerciseView.findViewById(R.id.btn_start_exercise);
         }
     }
-
 }

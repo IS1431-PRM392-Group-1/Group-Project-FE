@@ -65,5 +65,4 @@ public class PersonalReport {
     public int delete(Repo repo) {
         return repo.personalReport.delete(this);
     }
-
 }

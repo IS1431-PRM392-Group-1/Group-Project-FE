@@ -12,17 +12,14 @@ public class AuthActivity extends AppCompatActivity {
     private ActivityAuthBinding binding;
 
     private void bindingInit() {
-
         binding = ActivityAuthBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
     }
 
     private void bindingView() {
-
     }
 
     private void bindingAction() {
-
     }
 
     @Override
@@ -33,6 +30,4 @@ public class AuthActivity extends AppCompatActivity {
         bindingView();
         bindingAction();
     }
-
-
 }

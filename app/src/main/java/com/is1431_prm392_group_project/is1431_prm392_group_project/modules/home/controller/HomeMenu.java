@@ -27,7 +27,6 @@ public class HomeMenu extends AppCompatActivity {
     private NavController navController;
 
     private void bindingInit() {
-
         binding = ActivityHomeMenuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         homeMenuBar = binding.appBarMain;
@@ -44,14 +43,12 @@ public class HomeMenu extends AppCompatActivity {
     }
 
     private void bindingView() {
-
     }
 
     private void bindingAction() {
         homeMenuBar.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }

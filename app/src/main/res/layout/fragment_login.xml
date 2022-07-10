@@ -11,8 +11,6 @@
         android:background="@drawable/image"
         android:orientation="vertical">
         <!--EditText for user name or email address-->
-
-
         <EditText
             android:id="@+id/input_login"
             android:layout_width="match_parent"
@@ -43,7 +41,6 @@
             android:textColor="#ffffff"
             android:textColorHint="#d3d3d3" />
         <!-- Login Button for Facebook Log In-->
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -54,7 +51,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="400px"
                 android:layout_marginTop="35dp"
-
                 android:backgroundTint="#FF00897B"
                 android:padding="10dp"
                 android:text="Log In"
@@ -62,7 +58,6 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
         </RelativeLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -80,7 +75,6 @@
 
             <TextView
                 android:id="@+id/txtForgotPassword"
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -88,9 +82,6 @@
                 android:layout_marginBottom="15dp"
                 android:text="Forgot Password?"
                 android:textColor="#ffffff" />
-
         </LinearLayout>
     </LinearLayout>
-
-
 </FrameLayout>
