@@ -1,13 +1,14 @@
 package com.is1431_prm392_group_project.is1431_prm392_group_project.modules.common.adaper;
 
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.R;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.food.ParentItem;
@@ -28,8 +29,7 @@ public class ParentItemAdapter
             .RecycledViewPool();
     private List<ParentItem> itemList;
 
-    public ParentItemAdapter(List<ParentItem> itemList)
-    {
+    public ParentItemAdapter(List<ParentItem> itemList) {
         this.itemList = itemList;
     }
 
@@ -37,8 +37,7 @@ public class ParentItemAdapter
     @Override
     public ParentViewHolder onCreateViewHolder(
             @NonNull ViewGroup viewGroup,
-            int i)
-    {
+            int i) {
 
         // Here we inflate the corresponding
         // layout of the parent item
@@ -54,8 +53,7 @@ public class ParentItemAdapter
     @Override
     public void onBindViewHolder(
             @NonNull ParentViewHolder parentViewHolder,
-            int position)
-    {
+            int position) {
 
         // Create an instance of the ParentItem
         // class for the given position
@@ -119,8 +117,7 @@ public class ParentItemAdapter
     // of instances we have created
     // of the ParentItemList
     @Override
-    public int getItemCount()
-    {
+    public int getItemCount() {
 
         return itemList.size();
     }
@@ -134,8 +131,7 @@ public class ParentItemAdapter
         private TextView ParentItemTitle;
         private RecyclerView ChildRecyclerView;
 
-        ParentViewHolder(final View itemView)
-        {
+        ParentViewHolder(final View itemView) {
             super(itemView);
 
             ParentItemTitle

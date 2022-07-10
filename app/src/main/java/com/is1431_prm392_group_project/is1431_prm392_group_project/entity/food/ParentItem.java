@@ -13,8 +13,7 @@ public class ParentItem {
     // to initialize the variables
     public ParentItem(
             String ParentItemTitle,
-            List<Food> foodList)
-    {
+            List<Food> foodList) {
 
         this.ParentItemTitle = ParentItemTitle;
         this.foodList = foodList;
@@ -22,25 +21,21 @@ public class ParentItem {
 
     // Getter and Setter methods
     // for each parameter
-    public String getParentItemTitle()
-    {
+    public String getParentItemTitle() {
         return ParentItemTitle;
     }
 
     public void setParentItemTitle(
-            String parentItemTitle)
-    {
+            String parentItemTitle) {
         ParentItemTitle = parentItemTitle;
     }
 
-    public List<Food> getFoodList()
-    {
+    public List<Food> getFoodList() {
         return foodList;
     }
 
     public void setChildItemList(
-            List<Food> foodList)
-    {
+            List<Food> foodList) {
         foodList = foodList;
     }
 }

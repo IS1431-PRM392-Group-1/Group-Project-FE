@@ -2,7 +2,6 @@ package com.is1431_prm392_group_project.is1431_prm392_group_project.modules.home
 
 import android.os.Bundle;
 
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,8 +21,7 @@ public class DiscoverFragment extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_discover);
 
@@ -56,8 +54,7 @@ public class DiscoverFragment extends AppCompatActivity {
                 .setLayoutManager(layoutManager);
     }
 
-    private List<ParentItem> ParentItemList()
-    {
+    private List<ParentItem> ParentItemList() {
         List<ParentItem> itemList
                 = new ArrayList<>();
 
@@ -88,15 +85,14 @@ public class DiscoverFragment extends AppCompatActivity {
     // Method to pass the arguments
     // for the elements
     // of child RecyclerView
-    private List<Food> ChildItemList()
-    {
+    private List<Food> ChildItemList() {
         List<Food> ChildItemList
                 = new ArrayList<>();
 
-        ChildItemList.add(new Food("food1",120));
-        ChildItemList.add(new Food("food2",30));
-        ChildItemList.add(new Food("food3",300));
-        ChildItemList.add(new Food("food4",50));
+        ChildItemList.add(new Food("food1", 120));
+        ChildItemList.add(new Food("food2", 30));
+        ChildItemList.add(new Food("food3", 300));
+        ChildItemList.add(new Food("food4", 50));
         return ChildItemList;
     }
 
