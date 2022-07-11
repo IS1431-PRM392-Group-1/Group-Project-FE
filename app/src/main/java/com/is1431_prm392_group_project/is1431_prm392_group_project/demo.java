@@ -1,8 +1,8 @@
 package com.is1431_prm392_group_project.is1431_prm392_group_project;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class demo extends AppCompatActivity {
 

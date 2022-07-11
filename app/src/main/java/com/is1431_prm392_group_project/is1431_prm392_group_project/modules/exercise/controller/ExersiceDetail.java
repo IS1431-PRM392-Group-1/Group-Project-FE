@@ -10,12 +10,11 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.is1431_prm392_group_project.is1431_prm392_group_project.R;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.models.entity.exercise.ExerciseDetail;
+import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.common.adaper.ExerciseDetailAdapter;
 
 import java.util.ArrayList;
-
-import com.is1431_prm392_group_project.is1431_prm392_group_project.R;
-import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.common.adaper.ExerciseDetailAdapter;
 
 public class ExersiceDetail extends Fragment {
 
@@ -36,12 +35,12 @@ public class ExersiceDetail extends Fragment {
         rc_ExerciseDetail.setLayoutManager(new LinearLayoutManager(getContext()));
 
         exercises = new ArrayList<>();
-        exercises.add(new ExerciseDetail(1,"After 18 age",2,15));
-        exercises.add(new ExerciseDetail(2,"After 18 age",2,15));
-        exercises.add(new ExerciseDetail(3,"After 18 age",2,15));
-        Log.d("De1001", "onCreateView: " +exercises.get(1).getName());
+        exercises.add(new ExerciseDetail(1, "After 18 age", 2, 15));
+        exercises.add(new ExerciseDetail(2, "After 18 age", 2, 15));
+        exercises.add(new ExerciseDetail(3, "After 18 age", 2, 15));
+        Log.d("De1001", "onCreateView: " + exercises.get(1).getName());
 
-        rc_ExerciseDetail.setAdapter(new ExerciseDetailAdapter(getContext(),exercises));
+        rc_ExerciseDetail.setAdapter(new ExerciseDetailAdapter(getContext(), exercises));
         return view;
     }
 

@@ -43,6 +43,7 @@ public class HomeMenu extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
+
     private void bindingView() {
 
     }
@@ -58,11 +59,12 @@ public class HomeMenu extends AppCompatActivity {
         });
     }
 
-    private boolean moveToLoginActivity(){
+    private boolean moveToLoginActivity() {
         Intent i = new Intent(getApplicationContext(), LoginActivity.class);
         startActivity(i);
         return false;
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
