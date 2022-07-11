@@ -1,19 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#fff">
-
-    <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:scrollbars="none">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#22fleaea"
+    tools:context=".modules.home.controller.WorkoutListFragment">
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10.0dp"
             android:orientation="vertical">
+
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -30,6 +29,7 @@
                     android:gravity="center"
                     android:orientation="horizontal">
 
+
                     <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -37,18 +37,18 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/text_name_exercise"
+                            android:id="@+id/text_name_exercises"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="monospace"
                             android:padding="5dp"
-                            android:text="After 18 year"
+                            android:text="After Age 18"
                             android:textColor="@color/black"
                             android:textSize="20dp"
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/text_time_exercise"
+                            android:id="@+id/text_time_exercises"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="serif"
@@ -59,13 +59,14 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/text_preday_exercise"
+                            android:id="@+id/text_preday_exercises"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="5dp"
                             android:text="Every 15 min"
                             android:textColor="#ff00"
                             android:textStyle="bold" />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -74,10 +75,11 @@
                         android:layout_weight="2.0">
 
                         <pl.droidsonroids.gif.GifImageView
-                            android:id="@+id/gif_exercise"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/exersice_8" />
+                            android:src="@drawable/exersice_1" />
+
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -86,16 +88,18 @@
                         android:layout_weight="0.0">
 
                         <ImageView
-                            android:id="@+id/btn_view_detail"
+                            android:id="@+id/img_view_detail"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="10dp"
                             android:src="@drawable/ic_baseline_arrow_forward" />
+
                     </LinearLayout>
+
                 </LinearLayout>
 
                 <Button
-                    android:id="@+id/btn_start_exercise"
+                    android:id="@+id/btn_start_exercises"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -105,5 +109,4 @@
                     android:textColor="#fff" />
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>
 </LinearLayout>

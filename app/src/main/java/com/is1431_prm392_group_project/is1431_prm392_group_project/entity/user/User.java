@@ -47,22 +47,22 @@ public class User {
     }
 
     private int save(Repo repo) {
-        if (repo.Users.getByUsername(username) == null) {
-            return repo.Users.create(this);
+        if (repo.getUsers().getByUsername(username) == null) {
+            return repo.getUsers().create(this);
         } else {
-            return repo.Users.update(this);
+            return repo.getUsers().update(this);
         }
     }
 
     public int update(Repo repo) throws Exception {
-        if (repo.Users.getByUsername(username) == null) {
+        if (repo.getUsers().getByUsername(username) == null) {
             throw USER_NOT_FOUND;
         } else {
-            return repo.Users.update(this);
+            return repo.getUsers().update(this);
         }
     }
 
     public int delete(Repo repo) {
-        return repo.Users.delete(this);
+        return repo.getUsers().delete(this);
     }
 }

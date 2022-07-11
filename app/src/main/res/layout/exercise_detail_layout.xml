@@ -17,7 +17,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="100dp"
@@ -25,28 +24,25 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:orientation="horizontal"
-                    >
-
+                    android:orientation="horizontal">
 
                     <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1.0"
                         android:layout_margin="10dp"
+                        android:layout_weight="1.0"
                         android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/text_name_action"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="5dp"
                             android:fontFamily="monospace"
+                            android:paddingLeft="5dp"
                             android:text="Mountaion Climber"
                             android:textAllCaps="true"
                             android:textColor="@color/black"
@@ -71,9 +67,7 @@
                             android:paddingLeft="5dp"
                             android:text="01 : 00 MIN"
                             android:textColor="#ff00"
-                            android:textStyle="bold"
-                            />
-
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -84,16 +78,10 @@
                         <pl.droidsonroids.gif.GifImageView
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/exersice_8"/>
-
-
+                            android:src="@drawable/exersice_8" />
                     </LinearLayout>
-
                 </LinearLayout>
-
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>

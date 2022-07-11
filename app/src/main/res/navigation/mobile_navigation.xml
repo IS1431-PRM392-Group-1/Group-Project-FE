@@ -6,8 +6,7 @@
     app:startDestination="@+id/nav_home">
     <activity
         android:id="@+id/nav_login"
-        android:name="com.is1431_prm392_group_project.is1431_prm392_group_project.modules.auth.controller.LoginActivity"
-        />
+        android:name="com.is1431_prm392_group_project.is1431_prm392_group_project.modules.auth.controller.AuthActivity" />
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.is1431_prm392_group_project.is1431_prm392_group_project.modules.home.controller.ReportFragment"

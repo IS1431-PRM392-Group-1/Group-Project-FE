@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exercise.Exercise;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exercise.ExerciseList;
+import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.food.Food;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.report.PersonalReport;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.report.PracticeReport;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.user.User;
@@ -23,9 +24,11 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private Dao<User, String> userDao = null;
     private Dao<PracticeReport, Integer> practiceReportDao = null;
-    private Dao<PersonalReport, Integer> personalReportDeo =null;
+    private Dao<PersonalReport, Integer> personalReportDeo = null;
     private Dao<Exercise, Integer> exerciseDao = null;
-   private Dao<ExerciseList, Integer> exerciseListDao =null;
+    private Dao<ExerciseList, Integer> exerciseListDao = null;
+    private Dao<Food, Integer> foodsDao = null;
+
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         DatabaseInitializer initializer = new DatabaseInitializer(context);
@@ -72,8 +75,10 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
         super.close();
         userDao = null;
         practiceReportDao = null;
-        personalReportDeo= null;
+        personalReportDeo = null;
+        exerciseDao = null;
         exerciseListDao = null;
+        foodsDao = null;
     }
 
     public Dao<PracticeReport, Integer> getPracticeReportDao() throws SQLException {
@@ -83,24 +88,31 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
         return practiceReportDao;
     }
 
-    public Dao<PersonalReport, Integer> getPersonalReportDao() throws SQLException  {
+    public Dao<PersonalReport, Integer> getPersonalReportDao() throws SQLException {
         if (personalReportDeo == null) {
             personalReportDeo = DaoManager.createDao(getConnectionSource(), PersonalReport.class);
         }
         return personalReportDeo;
     }
 
-    public Dao<ExerciseList, Integer> getExerciseListDao()throws SQLException  {
+    public Dao<ExerciseList, Integer> getExerciseListDao() throws SQLException {
         if (exerciseListDao == null) {
             exerciseListDao = DaoManager.createDao(getConnectionSource(), ExerciseList.class);
         }
         return exerciseListDao;
     }
 
-    public Dao<Exercise, Integer> getExerciseDao() throws SQLException  {
+    public Dao<Exercise, Integer> getExerciseDao() throws SQLException {
         if (exerciseDao == null) {
             exerciseDao = DaoManager.createDao(getConnectionSource(), Exercise.class);
         }
         return exerciseDao;
+    }
+
+    public Dao<Food, Integer> getFoodDao() throws SQLException {
+        if (foodsDao == null) {
+            foodsDao = DaoManager.createDao(getConnectionSource(), Food.class);
+        }
+        return foodsDao;
     }
 }

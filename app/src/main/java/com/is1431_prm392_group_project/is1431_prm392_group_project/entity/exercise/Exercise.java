@@ -4,25 +4,23 @@ import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.Repo;
 import com.j256.ormlite.field.DatabaseField;
 
 public class Exercise {
-    public int getId() {
-        return id;
-    }
-
     @DatabaseField(id = true, generatedId = true)
-    private int id;
-
+    int id;
     @DatabaseField
-    private String name;
-
+    String name;
     @DatabaseField
     private String time;
-
     @DatabaseField
     private String perday;
-
     @DatabaseField
     private String src_gif;
 
+    public Exercise() {
+    }
+
+    public int getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
@@ -56,27 +54,23 @@ public class Exercise {
         this.src_gif = src_gif;
     }
 
-    public Exercise() {
-    }
-
-
     private int save(Repo repo) {
-        if (repo.exercise.getByID(id) == null) {
-            return repo.exercise.create(this);
+        if (repo.getExercise().getByID(id) == null) {
+            return repo.getExercise().create(this);
         } else {
-            return repo.exercise.update(this);
+            return repo.getExercise().update(this);
         }
     }
 
     public int update(Repo repo) throws Exception {
-        if (repo.exercise.getByID(id) == null) {
-            return repo.exercise.create(this);
+        if (repo.getExercise().getByID(id) == null) {
+            return repo.getExercise().create(this);
         } else {
-            return repo.exercise.update(this);
+            return repo.getExercise().update(this);
         }
     }
 
     public int delete(Repo repo) {
-        return repo.exercise.delete(this);
+        return repo.getExercise().delete(this);
     }
 }

@@ -6,23 +6,57 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.ForeignCollectionField;
 
 public class ExerciseList {
+    @DatabaseField(id = true, generatedId = true)
+    int id;
+    @DatabaseField
+    private String name;
+    @DatabaseField
+    private String time;
+    @DatabaseField
+    private String perday;
+    @DatabaseField
+    private int src_gif;
+    @ForeignCollectionField(eager = false)
+    private ForeignCollection<Exercise> list;
+
+    public ExerciseList() {
+    }
+
     public int getId() {
         return id;
     }
-
-    @DatabaseField(id = true, generatedId = true)
-    int id;
 
     public String getName() {
         return name;
     }
 
+    public int getSrc_gif() {
+        return src_gif;
+    }
+
+    public void setSrc_gif(int src_gif) {
+        this.src_gif = src_gif;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getPerday() {
+        return perday;
+    }
+
+    public void setPerday(String perday) {
+        this.perday = perday;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
-
-    @DatabaseField
-    String name;
 
     public ForeignCollection<Exercise> getList() {
         return list;
@@ -32,29 +66,23 @@ public class ExerciseList {
         this.list = list;
     }
 
-    @ForeignCollectionField(eager = false)
-    private ForeignCollection<Exercise> list;
-    public ExerciseList() {
-    }
-
-
     private int save(Repo repo) {
-        if (repo.exerciseList.getByID(id) == null) {
-            return repo.exerciseList.create(this);
+        if (repo.getExerciseList().getByID(id) == null) {
+            return repo.getExerciseList().create(this);
         } else {
-            return repo.exerciseList.update(this);
+            return repo.getExerciseList().update(this);
         }
     }
 
     public int update(Repo repo) throws Exception {
-        if (repo.exerciseList.getByID(id) == null) {
-            return repo.exerciseList.create(this);
+        if (repo.getExerciseList().getByID(id) == null) {
+            return repo.getExerciseList().create(this);
         } else {
-            return repo.exerciseList.update(this);
+            return repo.getExerciseList().update(this);
         }
     }
 
     public int delete(Repo repo) {
-        return repo.exerciseList.delete(this);
+        return repo.getExerciseList().delete(this);
     }
 }
