@@ -14,6 +14,8 @@ import com.is1431_prm392_group_project.is1431_prm392_group_project.R;
 
 import java.util.ArrayList;
 
+import pl.droidsonroids.gif.GifImageView;
+
 
 public class ExerciseDetailAdapter extends RecyclerView.Adapter<ExerciseDetailAdapter.ExerciseDetailViewHolder>{
 
@@ -40,6 +42,7 @@ public class ExerciseDetailAdapter extends RecyclerView.Adapter<ExerciseDetailAd
         holder.txtName.setText(exercise.getName());
         holder.textTime.setText(exercise.getTime() + "times");
         holder.txt_perday.setText(exercise.getTimes() + "MIN" );
+
     }
 
     @Override
@@ -51,10 +54,12 @@ public class ExerciseDetailAdapter extends RecyclerView.Adapter<ExerciseDetailAd
 
         private TextView txtName, textTime, txt_perday;
 
+
         private void bindingView(View exereciseView){
             txtName = exereciseView.findViewById(R.id.text_name_action);
             textTime = exereciseView.findViewById(R.id.text_time_action);
             txt_perday = exereciseView.findViewById(R.id.text_times_action);
+
         }
 
         public ExerciseDetailViewHolder(@NonNull View exereciseView) {

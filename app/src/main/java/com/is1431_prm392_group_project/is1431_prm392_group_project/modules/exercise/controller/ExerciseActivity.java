@@ -29,9 +29,9 @@ public class ExerciseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_exercise);
         bindingView();
         //thieu gif begin
-        exercises.add(new Exercise(1,"After 18 age","30 Days","15 min"));
-        exercises.add(new Exercise(2,"After 24 age","60 Days","15 min"));
-        exercises.add(new Exercise(3,"After 40 age","15 Days","15 min"));
+        exercises.add(new Exercise(1,"After 18 age","30 Days","15 min",1));
+        exercises.add(new Exercise(2,"After 24 age","60 Days","15 min",2));
+        exercises.add(new Exercise(3,"After 40 age","15 Days","15 min",3));
 
         initRecyclerView();
     }
