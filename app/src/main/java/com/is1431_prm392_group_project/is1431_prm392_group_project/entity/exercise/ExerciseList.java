@@ -67,22 +67,22 @@ public class ExerciseList {
     }
 
     private int save(Repo repo) {
-        if (repo.exerciseList.getByID(id) == null) {
-            return repo.exerciseList.create(this);
+        if (repo.getExerciseList().getByID(id) == null) {
+            return repo.getExerciseList().create(this);
         } else {
-            return repo.exerciseList.update(this);
+            return repo.getExerciseList().update(this);
         }
     }
 
     public int update(Repo repo) throws Exception {
-        if (repo.exerciseList.getByID(id) == null) {
-            return repo.exerciseList.create(this);
+        if (repo.getExerciseList().getByID(id) == null) {
+            return repo.getExerciseList().create(this);
         } else {
-            return repo.exerciseList.update(this);
+            return repo.getExerciseList().update(this);
         }
     }
 
     public int delete(Repo repo) {
-        return repo.exerciseList.delete(this);
+        return repo.getExerciseList().delete(this);
     }
 }

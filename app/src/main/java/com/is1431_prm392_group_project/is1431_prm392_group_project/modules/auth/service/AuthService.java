@@ -27,6 +27,4 @@ public class AuthService {
     public IAuthRepository getAuthApiRepository() {
         return authApiRepository;
     }
-
-
 }

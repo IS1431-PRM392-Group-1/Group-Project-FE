@@ -14,9 +14,7 @@ import com.is1431_prm392_group_project.is1431_prm392_group_project.models.entity
 
 import java.util.ArrayList;
 
-
 public class ExerciseDetailAdapter extends RecyclerView.Adapter<ExerciseDetailAdapter.ExerciseDetailViewHolder> {
-
     Context context;
     ArrayList<ExerciseDetail> exercises;
     LayoutInflater inflater;
@@ -49,7 +47,6 @@ public class ExerciseDetailAdapter extends RecyclerView.Adapter<ExerciseDetailAd
     }
 
     public class ExerciseDetailViewHolder extends RecyclerView.ViewHolder {
-
         private TextView txtName, textTime, txt_perday;
 
         public ExerciseDetailViewHolder(@NonNull View exereciseView) {

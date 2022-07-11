@@ -27,7 +27,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     private Dao<PersonalReport, Integer> personalReportDeo = null;
     private Dao<Exercise, Integer> exerciseDao = null;
     private Dao<ExerciseList, Integer> exerciseListDao = null;
-    private  Dao<Food, Integer> foodsDao =null;
+    private Dao<Food, Integer> foodsDao = null;
+
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         DatabaseInitializer initializer = new DatabaseInitializer(context);
@@ -77,7 +78,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
         personalReportDeo = null;
         exerciseDao = null;
         exerciseListDao = null;
-       foodsDao =null;
+        foodsDao = null;
     }
 
     public Dao<PracticeReport, Integer> getPracticeReportDao() throws SQLException {

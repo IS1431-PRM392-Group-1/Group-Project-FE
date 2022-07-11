@@ -12,10 +12,7 @@ import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.commo
 
 import java.util.ArrayList;
 
-
 public class ExerciseActivity extends AppCompatActivity {
-
-
     private final ArrayList<Exercise> exercises = new ArrayList<>();
     private RecyclerView rc_Exercise;
 
@@ -32,7 +29,6 @@ public class ExerciseActivity extends AppCompatActivity {
         exercises.add(new Exercise(1, "After 18 age", "30 Days", "15 min"));
         exercises.add(new Exercise(2, "After 24 age", "60 Days", "15 min"));
         exercises.add(new Exercise(3, "After 40 age", "15 Days", "15 min"));
-
         initRecyclerView();
     }
 

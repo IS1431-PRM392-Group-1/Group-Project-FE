@@ -37,22 +37,22 @@ public class PracticeReport {
     }
 
     private int save(Repo repo) {
-        if (repo.practiceReport.getByID(id) == null) {
-            return repo.practiceReport.create(this);
+        if (repo.getPracticeReport().getByID(id) == null) {
+            return repo.getPracticeReport().create(this);
         } else {
-            return repo.practiceReport.update(this);
+            return repo.getPracticeReport().update(this);
         }
     }
 
     public int update(Repo repo) throws Exception {
-        if (repo.practiceReport.getByID(id) == null) {
-            return repo.practiceReport.create(this);
+        if (repo.getPracticeReport().getByID(id) == null) {
+            return repo.getPracticeReport().create(this);
         } else {
-            return repo.practiceReport.update(this);
+            return repo.getPracticeReport().update(this);
         }
     }
 
     public int delete(Repo repo) {
-        return repo.practiceReport.delete(this);
+        return repo.getPracticeReport().delete(this);
     }
 }

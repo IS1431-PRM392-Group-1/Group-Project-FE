@@ -8,12 +8,24 @@ import java.text.NumberFormat;
 
 public class Food {
     NumberFormat format = new DecimalFormat("0.#");
+    @DatabaseField(id = true, generatedId = true)
+    int id;
+    @DatabaseField
+    String name;
+    @DatabaseField
+    double calo;
+
+    public Food() {
+    }
+
+    public Food(String name, double calo) {
+        this.name = name;
+        this.calo = calo;
+    }
+
     public int getId() {
         return id;
     }
-
-    @DatabaseField(id = true, generatedId = true)
-    int id;
 
     public String getName() {
         return name;
@@ -23,9 +35,6 @@ public class Food {
         this.name = name;
     }
 
-    @DatabaseField
-    String name;
-
     public String getCalo() {
         return format.format(calo);
     }
@@ -34,35 +43,23 @@ public class Food {
         this.calo = calo;
     }
 
-    @DatabaseField
-    double calo;
-
-    public Food() {
-    }
-
-    public Food(String name,double calo) {
-        this.name = name;
-        this.calo = calo;
-    }
-
-
     private int save(Repo repo) {
-        if (repo.food.getByID(id) == null) {
-            return repo.food.create(this);
+        if (repo.getFood().getByID(id) == null) {
+            return repo.getFood().create(this);
         } else {
-            return repo.food.update(this);
+            return repo.getFood().update(this);
         }
     }
 
     public int update(Repo repo) throws Exception {
-        if (repo.food.getByID(id) == null) {
-            return repo.food.create(this);
+        if (repo.getFood().getByID(id) == null) {
+            return repo.getFood().create(this);
         } else {
-            return repo.food.update(this);
+            return repo.getFood().update(this);
         }
     }
 
     public int delete(Repo repo) {
-        return repo.food.delete(this);
+        return repo.getFood().delete(this);
     }
 }

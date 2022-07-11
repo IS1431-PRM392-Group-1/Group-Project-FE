@@ -1,7 +1,6 @@
 package com.is1431_prm392_group_project.is1431_prm392_group_project.modules.common.adaper;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,23 +15,18 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.R;
-import com.is1431_prm392_group_project.is1431_prm392_group_project.demo;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.models.entity.exercise.Exercise;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.exercise.controller.ExersiceDetail;
 
 import java.util.ArrayList;
 
 public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder> {
-
     Context context;
     ArrayList<Exercise> exercises;
     LayoutInflater inflater;
-
-
     ExersiceDetail fragDetail;
     FragmentManager fragManager;
     FragmentTransaction transaction;
-
 
     public ExerciseAdapter(Context context, ArrayList<Exercise> exercises) {
         this.context = context;
@@ -54,14 +48,9 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
         holder.txtName.setText(exercise.getName());
         holder.textTime.setText(exercise.getTime());
         holder.txt_perday.setText(exercise.getPerday());
-
         holder.btn_exercise_detail.setOnClickListener(this::onClickShowFragment);
-
         holder.btn_start_exercise.setOnClickListener(view -> {
-            //this is activity start exercise
-            //demo start a activity
-            Intent intent = new Intent(context, demo.class);
-            context.startActivity(intent);
+
         });
     }
 
@@ -79,7 +68,6 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
     }
 
     public class ExerciseViewHolder extends RecyclerView.ViewHolder {
-
         private ImageView btn_exercise_detail;
         private TextView txtName, textTime, txt_perday;
         private Button btn_start_exercise;
@@ -97,5 +85,4 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
             btn_start_exercise = exerciseView.findViewById(R.id.btn_start_exercise);
         }
     }
-
 }

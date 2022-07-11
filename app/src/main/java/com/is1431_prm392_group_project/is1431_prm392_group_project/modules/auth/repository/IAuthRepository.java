@@ -7,9 +7,6 @@ import retrofit2.http.Body;
 import retrofit2.http.POST;
 
 public interface IAuthRepository {
-
     @POST("auth/login")
     Call<LoginDto> login(@Body LoginDto loginDto);
-
-
 }

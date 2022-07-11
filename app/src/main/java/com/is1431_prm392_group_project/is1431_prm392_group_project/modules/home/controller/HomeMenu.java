@@ -1,6 +1,5 @@
 package com.is1431_prm392_group_project.is1431_prm392_group_project.modules.home.controller;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -17,7 +16,6 @@ import com.google.android.material.snackbar.Snackbar;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.R;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.databinding.ActivityHomeMenuBinding;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.databinding.HomeMenuBarBinding;
-import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.auth.controller.LoginActivity;
 
 public class HomeMenu extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
@@ -28,7 +26,6 @@ public class HomeMenu extends AppCompatActivity {
     private NavController navController;
 
     private void bindingInit() {
-
         binding = ActivityHomeMenuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         homeMenuBar = binding.appBarMain;
@@ -45,25 +42,18 @@ public class HomeMenu extends AppCompatActivity {
     }
 
     private void bindingView() {
-
     }
 
     private void bindingAction() {
         homeMenuBar.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
     }
 
-    private boolean moveToLoginActivity() {
-        Intent i = new Intent(getApplicationContext(), LoginActivity.class);
-        startActivity(i);
-        return false;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

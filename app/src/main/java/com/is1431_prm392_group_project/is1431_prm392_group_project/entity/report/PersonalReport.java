@@ -47,23 +47,22 @@ public class PersonalReport {
     }
 
     private int save(Repo repo) {
-        if (repo.personalReport.getByID(id) == null) {
-            return repo.personalReport.create(this);
+        if (repo.getPersonalReport().getByID(id) == null) {
+            return repo.getPersonalReport().create(this);
         } else {
-            return repo.personalReport.update(this);
+            return repo.getPersonalReport().update(this);
         }
     }
 
     public int update(Repo repo) throws Exception {
-        if (repo.personalReport.getByID(id) == null) {
-            return repo.personalReport.create(this);
+        if (repo.getPersonalReport().getByID(id) == null) {
+            return repo.getPersonalReport().create(this);
         } else {
-            return repo.personalReport.update(this);
+            return repo.getPersonalReport().update(this);
         }
     }
 
     public int delete(Repo repo) {
-        return repo.personalReport.delete(this);
+        return repo.getPersonalReport().delete(this);
     }
-
 }

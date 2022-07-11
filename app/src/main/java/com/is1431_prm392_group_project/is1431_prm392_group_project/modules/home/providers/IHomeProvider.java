@@ -36,6 +36,7 @@ public class IHomeProvider {
         }
         return list;
     }
+
     public ArrayList<Food> getFoods() {
         ArrayList<Food> list = new ArrayList<>();
         Food e1 = new Food();
