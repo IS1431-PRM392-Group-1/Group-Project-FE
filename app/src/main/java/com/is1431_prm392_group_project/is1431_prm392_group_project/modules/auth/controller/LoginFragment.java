@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-
 import com.is1431_prm392_group_project.is1431_prm392_group_project.databinding.FragmentLoginBinding;
 
 
@@ -39,7 +38,6 @@ public class LoginFragment extends Fragment {
         bindingAction();
 
     }
-
 
 
     @Override

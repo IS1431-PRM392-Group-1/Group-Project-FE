@@ -8,6 +8,12 @@ public class Exercise {
     int id;
     @DatabaseField
     String name;
+    @DatabaseField
+    private String time;
+    @DatabaseField
+    private String perday;
+    @DatabaseField
+    private String src_gif;
 
     public Exercise() {
     }
@@ -22,6 +28,30 @@ public class Exercise {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getPerday() {
+        return perday;
+    }
+
+    public void setPerday(String perday) {
+        this.perday = perday;
+    }
+
+    public String getSrc_gif() {
+        return src_gif;
+    }
+
+    public void setSrc_gif(String src_gif) {
+        this.src_gif = src_gif;
     }
 
     private int save(Repo repo) {

@@ -14,7 +14,9 @@ import com.is1431_prm392_group_project.is1431_prm392_group_project.models.entity
 
 import java.util.ArrayList;
 
+
 public class ExerciseDetailAdapter extends RecyclerView.Adapter<ExerciseDetailAdapter.ExerciseDetailViewHolder> {
+
     Context context;
     ArrayList<ExerciseDetail> exercises;
     LayoutInflater inflater;
@@ -38,7 +40,10 @@ public class ExerciseDetailAdapter extends RecyclerView.Adapter<ExerciseDetailAd
         ExerciseDetail exercise = exercises.get(position);
         holder.txtName.setText(exercise.getName());
         holder.textTime.setText(exercise.getTime() + "times");
+
         holder.txt_perday.setText(exercise.getTimes() + "MIN");
+
+
     }
 
     @Override
@@ -49,6 +54,7 @@ public class ExerciseDetailAdapter extends RecyclerView.Adapter<ExerciseDetailAd
     public class ExerciseDetailViewHolder extends RecyclerView.ViewHolder {
         private TextView txtName, textTime, txt_perday;
 
+
         public ExerciseDetailViewHolder(@NonNull View exereciseView) {
             super(exereciseView);
             bindingView(exereciseView);
@@ -58,6 +64,9 @@ public class ExerciseDetailAdapter extends RecyclerView.Adapter<ExerciseDetailAd
             txtName = exereciseView.findViewById(R.id.text_name_action);
             textTime = exereciseView.findViewById(R.id.text_time_action);
             txt_perday = exereciseView.findViewById(R.id.text_times_action);
+
         }
+
+        
     }
 }

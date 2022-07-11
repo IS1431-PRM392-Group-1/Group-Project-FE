@@ -30,6 +30,10 @@ public class ExerciseList {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int getSrc_gif() {
         return src_gif;
     }
@@ -52,10 +56,6 @@ public class ExerciseList {
 
     public void setPerday(String perday) {
         this.perday = perday;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public ForeignCollection<Exercise> getList() {
