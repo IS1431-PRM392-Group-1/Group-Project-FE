@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+    <activity
+        android:id="@+id/nav_login"
+        android:name="com.is1431_prm392_group_project.is1431_prm392_group_project.modules.auth.controller.AuthActivity" />
+    <fragment
+        android:id="@+id/nav_gallery"
+        class = "com.is1431_prm392_group_project.is1431_prm392_group_project.modules.home.controller.ReportFragment"
+        tools:layout="@layout/fragment_report" />
+    <fragment
+        android:id="@+id/nav_home"
+        class = "com.is1431_prm392_group_project.is1431_prm392_group_project.modules.home.controller.WorkoutListFragment"
+        tools:layout="@layout/fragment_workout_list" />
+    <activity
+        android:id="@+id/nav_slideshow"
+        android:name="com.is1431_prm392_group_project.is1431_prm392_group_project.modules.home.controller.DiscoverFragment" />
+</navigation>
