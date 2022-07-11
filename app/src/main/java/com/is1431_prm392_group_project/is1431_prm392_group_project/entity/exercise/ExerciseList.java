@@ -9,7 +9,13 @@ public class ExerciseList {
     @DatabaseField(id = true, generatedId = true)
     int id;
     @DatabaseField
-    String name;
+    private String name;
+    @DatabaseField
+    private String time;
+    @DatabaseField
+    private String perday;
+    @DatabaseField
+    private int src_gif;
     @ForeignCollectionField(eager = false)
     private ForeignCollection<Exercise> list;
 
@@ -22,6 +28,30 @@ public class ExerciseList {
 
     public String getName() {
         return name;
+    }
+
+    public int getSrc_gif() {
+        return src_gif;
+    }
+
+    public void setSrc_gif(int src_gif) {
+        this.src_gif = src_gif;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getPerday() {
+        return perday;
+    }
+
+    public void setPerday(String perday) {
+        this.perday = perday;
     }
 
     public void setName(String name) {
