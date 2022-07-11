@@ -25,22 +25,22 @@ public class Exercise {
     }
 
     private int save(Repo repo) {
-        if (repo.exercise.getByID(id) == null) {
-            return repo.exercise.create(this);
+        if (repo.getExercise().getByID(id) == null) {
+            return repo.getExercise().create(this);
         } else {
-            return repo.exercise.update(this);
+            return repo.getExercise().update(this);
         }
     }
 
     public int update(Repo repo) throws Exception {
-        if (repo.exercise.getByID(id) == null) {
-            return repo.exercise.create(this);
+        if (repo.getExercise().getByID(id) == null) {
+            return repo.getExercise().create(this);
         } else {
-            return repo.exercise.update(this);
+            return repo.getExercise().update(this);
         }
     }
 
     public int delete(Repo repo) {
-        return repo.exercise.delete(this);
+        return repo.getExercise().delete(this);
     }
 }

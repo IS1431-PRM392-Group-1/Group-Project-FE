@@ -44,22 +44,22 @@ public class Food {
     }
 
     private int save(Repo repo) {
-        if (repo.food.getByID(id) == null) {
-            return repo.food.create(this);
+        if (repo.getFood().getByID(id) == null) {
+            return repo.getFood().create(this);
         } else {
-            return repo.food.update(this);
+            return repo.getFood().update(this);
         }
     }
 
     public int update(Repo repo) throws Exception {
-        if (repo.food.getByID(id) == null) {
-            return repo.food.create(this);
+        if (repo.getFood().getByID(id) == null) {
+            return repo.getFood().create(this);
         } else {
-            return repo.food.update(this);
+            return repo.getFood().update(this);
         }
     }
 
     public int delete(Repo repo) {
-        return repo.food.delete(this);
+        return repo.getFood().delete(this);
     }
 }

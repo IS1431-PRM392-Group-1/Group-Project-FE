@@ -10,22 +10,43 @@ import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.entity.Re
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.entity.RepoUsers;
 
 public class Repo {
-    public RepoUsers Users;
-    public RepoPracticeReport practiceReport;
-    public RepoPersonalReport personalReport;
-    public RepoExercise exercise;
-    public RepoExerciseList exerciseList;
-    public RepoFood food;
-    DatabaseHelper db;
+    private RepoUsers Users;
+    private RepoPracticeReport practiceReport;
+    private RepoPersonalReport personalReport;
+
+    private RepoExercise exercise;
+    private RepoExerciseList exerciseList;
+    private RepoFood food;
+    private DatabaseHelper db;
+
 
     public Repo(Context context) {
         DatabaseManager<DatabaseHelper> manager = new DatabaseManager<DatabaseHelper>();
         db = manager.getHelper(context);
-        Users = new RepoUsers(db);
-        practiceReport = new RepoPracticeReport(db);
-        personalReport = new RepoPersonalReport(db);
-        exercise = new RepoExercise(db);
-        exerciseList = new RepoExerciseList(db);
-        food = new RepoFood(db);
+    }
+
+    public RepoUsers getUsers() {
+        return Users = new RepoUsers(db);
+    }
+
+    public RepoPracticeReport getPracticeReport() {
+        return practiceReport = new RepoPracticeReport(db);
+    }
+
+    public RepoPersonalReport getPersonalReport() {
+        return personalReport = new RepoPersonalReport(db);
+    }
+
+    public RepoExercise getExercise() {
+        return exercise = new RepoExercise(db);
+
+    }
+
+    public RepoExerciseList getExerciseList() {
+        return exerciseList = new RepoExerciseList(db);
+    }
+
+    public RepoFood getFood() {
+        return food = new RepoFood(db);
     }
 }

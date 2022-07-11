@@ -1,6 +1,5 @@
 package com.is1431_prm392_group_project.is1431_prm392_group_project.modules.home.controller;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -55,11 +54,6 @@ public class HomeMenu extends AppCompatActivity {
         });
     }
 
-    private boolean moveToLoginActivity() {
-        Intent i = new Intent(getApplicationContext(), LoginActivity.class);
-        startActivity(i);
-        return false;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

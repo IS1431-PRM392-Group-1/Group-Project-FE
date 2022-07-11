@@ -1,7 +1,6 @@
 package com.is1431_prm392_group_project.is1431_prm392_group_project.modules.common.adaper;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,6 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.R;
-import com.is1431_prm392_group_project.is1431_prm392_group_project.demo;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.models.entity.exercise.Exercise;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.exercise.controller.ExersiceDetail;
 
@@ -52,10 +50,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
         holder.txt_perday.setText(exercise.getPerday());
         holder.btn_exercise_detail.setOnClickListener(this::onClickShowFragment);
         holder.btn_start_exercise.setOnClickListener(view -> {
-            //this is activity start exercise
-            //demo start a activity
-            Intent intent = new Intent(context, demo.class);
-            context.startActivity(intent);
+
         });
     }
 
