@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exercise.Exercise;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exercise.ExerciseList;
+import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.food.Food;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.report.PersonalReport;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.report.PracticeReport;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.user.User;
@@ -26,7 +27,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     private Dao<PersonalReport, Integer> personalReportDeo = null;
     private Dao<Exercise, Integer> exerciseDao = null;
     private Dao<ExerciseList, Integer> exerciseListDao = null;
-
+    private  Dao<Food, Integer> foodsDao =null;
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         DatabaseInitializer initializer = new DatabaseInitializer(context);
@@ -74,7 +75,9 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
         userDao = null;
         practiceReportDao = null;
         personalReportDeo = null;
+        exerciseDao = null;
         exerciseListDao = null;
+       foodsDao =null;
     }
 
     public Dao<PracticeReport, Integer> getPracticeReportDao() throws SQLException {
@@ -103,5 +106,12 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
             exerciseDao = DaoManager.createDao(getConnectionSource(), Exercise.class);
         }
         return exerciseDao;
+    }
+
+    public Dao<Food, Integer> getFoodDao() throws SQLException {
+        if (foodsDao == null) {
+            foodsDao = DaoManager.createDao(getConnectionSource(), Food.class);
+        }
+        return foodsDao;
     }
 }
