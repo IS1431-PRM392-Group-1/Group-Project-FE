@@ -18,7 +18,8 @@ public class IHomeProvider {
     public ArrayList<ExerciseList> getExerciseLists() {
         ArrayList<ExerciseList> list = new ArrayList<>();
         ExerciseList e1 = new ExerciseList();
-        e1.setName("e1");
+        e1.setName(e1.getName());
+        e1.setPerday(e1.getPerday());
         ExerciseList e2 = new ExerciseList();
         e2.setName("e2");
         ExerciseList e3 = new ExerciseList();
