@@ -15,7 +15,6 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.R;
-import com.is1431_prm392_group_project.is1431_prm392_group_project.demo;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exercise.ExerciseList;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.models.entity.exercise.ExerciseDetail;
 
@@ -51,11 +50,6 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
         holder.text_time_exercise.setText(exercises.getTime());
         holder.img_exercise_detail.setImageResource(exercises.getSrc_gif());
         holder.img_exercise_detail.setOnClickListener(this::onClickShowFragment);
-        holder.btn_start_exercise.setOnClickListener(view -> {
-            Intent intent = new Intent(context, demo.class);
-            context.startActivity(intent);
-        });
-
     }
 
     private void onClickShowFragment(View view) {

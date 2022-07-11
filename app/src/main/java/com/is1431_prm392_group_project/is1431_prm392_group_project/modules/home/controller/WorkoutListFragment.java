@@ -20,8 +20,6 @@ public class WorkoutListFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentWorkoutListBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        final TextView textView = binding.textHome;
-        textView.setText("Welcome");
         provider = new HomeProvider(getContext());
         return root;
     }
