@@ -67,6 +67,6 @@ public class ExerciseDetailAdapter extends RecyclerView.Adapter<ExerciseDetailAd
 
         }
 
-        
+
     }
 }
