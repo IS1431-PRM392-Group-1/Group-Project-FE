@@ -43,14 +43,6 @@ public class Food {
         this.calo = calo;
     }
 
-    private int save(Repo repo) {
-        if (repo.getFood().getByID(id) == null) {
-            return repo.getFood().create(this);
-        } else {
-            return repo.getFood().update(this);
-        }
-    }
-
     public int update(Repo repo) throws Exception {
         if (repo.getFood().getByID(id) == null) {
             return repo.getFood().create(this);

@@ -6,5 +6,4 @@ public class AuthProvider extends IAuthProvider {
     public AuthProvider(Context context) {
         super(context);
     }
-
 }

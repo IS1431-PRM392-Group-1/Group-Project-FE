@@ -13,12 +13,10 @@ public class Repo {
     private RepoUsers Users;
     private RepoPracticeReport practiceReport;
     private RepoPersonalReport personalReport;
-
     private RepoExercise exercise;
     private RepoExerciseList exerciseList;
     private RepoFood food;
     private DatabaseHelper db;
-
 
     public Repo(Context context) {
         DatabaseManager<DatabaseHelper> manager = new DatabaseManager<DatabaseHelper>();
@@ -39,7 +37,6 @@ public class Repo {
 
     public RepoExercise getExercise() {
         return exercise = new RepoExercise(db);
-
     }
 
     public RepoExerciseList getExerciseList() {

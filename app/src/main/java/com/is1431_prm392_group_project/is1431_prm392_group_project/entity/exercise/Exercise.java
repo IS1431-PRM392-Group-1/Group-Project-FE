@@ -54,14 +54,6 @@ public class Exercise {
         this.src_gif = src_gif;
     }
 
-    private int save(Repo repo) {
-        if (repo.getExercise().getByID(id) == null) {
-            return repo.getExercise().create(this);
-        } else {
-            return repo.getExercise().update(this);
-        }
-    }
-
     public int update(Repo repo) throws Exception {
         if (repo.getExercise().getByID(id) == null) {
             return repo.getExercise().create(this);

@@ -46,14 +46,6 @@ public class PersonalReport {
         this.date = date;
     }
 
-    private int save(Repo repo) {
-        if (repo.getPersonalReport().getByID(id) == null) {
-            return repo.getPersonalReport().create(this);
-        } else {
-            return repo.getPersonalReport().update(this);
-        }
-    }
-
     public int update(Repo repo) throws Exception {
         if (repo.getPersonalReport().getByID(id) == null) {
             return repo.getPersonalReport().create(this);

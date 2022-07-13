@@ -1,7 +1,5 @@
 package com.is1431_prm392_group_project.is1431_prm392_group_project.entity.user;
 
-import static com.is1431_prm392_group_project.is1431_prm392_group_project.modules.common.filters.ExceptionsDefineder.USER_NOT_FOUND;
-
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.Repo;
 import com.j256.ormlite.field.DatabaseField;
 
@@ -46,7 +44,7 @@ public class User {
         this.email = email;
     }
 
-    private int save(Repo repo) {
+    public int update(Repo repo) throws Exception {
         if (repo.getUsers().getByUsername(username) == null) {
             return repo.getUsers().create(this);
         } else {
@@ -54,15 +52,22 @@ public class User {
         }
     }
 
-    public int update(Repo repo) throws Exception {
-        if (repo.getUsers().getByUsername(username) == null) {
-            throw USER_NOT_FOUND;
-        } else {
-            return repo.getUsers().update(this);
-        }
-    }
-
     public int delete(Repo repo) {
         return repo.getUsers().delete(this);
+    }
+
+    public void setName(String name) {
+    }
+
+    public void setAge(int age) {
+    }
+
+    public void setHeight(float height) {
+    }
+
+    public void setWeight(float weight) {
+    }
+
+    public void setGender(String gender) {
     }
 }

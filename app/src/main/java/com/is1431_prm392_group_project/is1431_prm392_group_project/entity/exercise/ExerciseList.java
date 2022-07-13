@@ -66,14 +66,6 @@ public class ExerciseList {
         this.list = list;
     }
 
-    private int save(Repo repo) {
-        if (repo.getExerciseList().getByID(id) == null) {
-            return repo.getExerciseList().create(this);
-        } else {
-            return repo.getExerciseList().update(this);
-        }
-    }
-
     public int update(Repo repo) throws Exception {
         if (repo.getExerciseList().getByID(id) == null) {
             return repo.getExerciseList().create(this);
