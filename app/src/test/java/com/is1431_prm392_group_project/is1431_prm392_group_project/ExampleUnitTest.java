@@ -1,8 +1,8 @@
 package com.is1431_prm392_group_project.is1431_prm392_group_project;
 
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
