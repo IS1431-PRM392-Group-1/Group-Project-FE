@@ -20,18 +20,31 @@ import java.util.List;
 
 public class FoodDiscoverActivity extends AppCompatActivity {
     private HashMap _$_findCachedViewById;
+    private ListView listview;
+    private TextView calorieText;
+    private FoodProvider provider;
+    private Button reset;
+    private TextView value;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FoodProvider provider = new FoodProvider(this);
+        provider = new FoodProvider(this);
         this.setContentView(R.layout.activity_food_calories);
-        ListView listview = this.findViewById(R.id.listView);
+        OnBindingView();
+        OnBindingAction();
+    }
+
+    private void OnBindingView() {
+        listview = this.findViewById(R.id.listView);
+        calorieText = this.findViewById(R.id.calorieText);
+        reset = this.findViewById(R.id.reset);
+        value = this.findViewById(R.id.valueCal);
+    }
+
+    private void OnBindingAction() {
         boolean var4 = false;
         List<Food> list = provider.getFoods();
-        TextView calorieText = this.findViewById(R.id.calorieText);
-        Button reset = this.findViewById(R.id.reset);
-        final TextView value = this.findViewById(R.id.valueCal);
         listview.setAdapter(new FoodAdapter(this, R.layout.listview_row, list));
         ((ListView) this.findViewById(R.id.listView)).setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public final void onItemClick(@NotNull AdapterView parent, @NotNull View view, int position, long id) {

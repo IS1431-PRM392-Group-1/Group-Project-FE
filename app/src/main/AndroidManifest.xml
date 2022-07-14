@@ -32,5 +32,6 @@
         <activity android:name=".modules.profile.controller.ProfileActivity" />
         <activity android:name=".modules.discover.controller.FoodDiscoverActivity" />
         <activity android:name=".modules.report.controller.ReportActivity" />
+        <activity android:name=".modules.feature.UpdateOnFeature" />
     </application>
 </manifest>

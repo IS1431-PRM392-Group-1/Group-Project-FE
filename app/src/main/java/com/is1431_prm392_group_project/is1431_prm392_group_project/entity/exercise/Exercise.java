@@ -24,6 +24,7 @@ public class Exercise {
         this.name = name;
         this.time = time;
         this.detail_gif_id = detail_gif_id;
+        this.calo = calo;
     }
 
     public int getCalo() {

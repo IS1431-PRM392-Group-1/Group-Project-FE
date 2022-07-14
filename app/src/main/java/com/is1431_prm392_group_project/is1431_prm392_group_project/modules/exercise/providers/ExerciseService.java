@@ -2,6 +2,7 @@ package com.is1431_prm392_group_project.is1431_prm392_group_project.modules.exer
 
 import android.content.Context;
 
+import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exercise.Exercise;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exercise.ExerciseAmount;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exercise.ExerciseList;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.report.PracticeReport;
@@ -27,7 +28,8 @@ public class ExerciseService extends IExerciseService {
     }
 
     public void saveCaloReport(ExerciseAmount exerciseAmounts) {
-        int calo = exerciseAmounts.getExercise().getCalo() * exerciseAmounts.getAmount();
+        Exercise exercise = repo.getExercise().getByID(exerciseAmounts.getExercise().getId());
+        int calo = exercise.getCalo() * exerciseAmounts.getAmount();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date(Calendar.getInstance().getTimeInMillis());
         PracticeReport practiceReport = repo.getPracticeReport().getByDate(dateFormat.format(date));

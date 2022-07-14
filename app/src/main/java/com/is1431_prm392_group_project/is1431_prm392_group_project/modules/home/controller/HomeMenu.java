@@ -26,6 +26,15 @@ public class HomeMenu extends AppCompatActivity implements NavigationView.OnNavi
     private ActionBarDrawerToggle toggle;
     private DrawerLayout drawerLayout;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        InitProvider inti = new InitProvider(this);
+        setContentView(R.layout.activity_home_menu);
+        onBindingView();
+        onBindingAction();
+    }
+
     private void onBindingView() {
         toolbar =
                 (Toolbar) findViewById(R.id.toolbar);
@@ -47,15 +56,6 @@ public class HomeMenu extends AppCompatActivity implements NavigationView.OnNavi
 
     private void onBindingAction() {
         nav.setNavigationItemSelectedListener(this);
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        InitProvider inti = new InitProvider(this);
-        setContentView(R.layout.activity_home_menu);
-        onBindingView();
-        onBindingAction();
     }
 
     @Override

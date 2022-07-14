@@ -13,11 +13,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.R;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.user.User;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.home.controller.HomeMenu;
-import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.setup.provider.SetUpProvider;
+import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.profile.provider.ProfileProvider;
 
 public class ProfileActivity extends AppCompatActivity {
     private User profile;
-    private SetUpProvider provider;
+    private ProfileProvider provider;
     private Button save_creds;
     private Spinner ch_gender;
     private EditText ename, eage, eheight, ewt, eemail;
@@ -27,15 +27,32 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        provider = new SetUpProvider(this);
+        provider = new ProfileProvider(this);
+        try {
+            profile = provider.getUser();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        OnBindingView();
+        OnBindingAction();
+    }
+
+    private void OnBindingView() {
         save_creds = (Button) findViewById(R.id.btn_save1);
         ch_gender = (Spinner) findViewById(R.id.edit_gender1);
         ename = (EditText) findViewById(R.id.edit_name1);
+        ename.setText(profile.getName() + "");
         eage = (EditText) findViewById(R.id.edit_age1);
+        eage.setText(profile.getAge() + "");
         eheight = (EditText) findViewById(R.id.edit_height1);
+        eheight.setText(profile.getHeight() + "");
         ewt = (EditText) findViewById(R.id.edit_weight1);
+        ewt.setText(profile.getWeight() + "");
         eemail = (EditText) findViewById(R.id.edit_email1);
-        profile = new User();
+        eemail.setText(profile.getEmail() + "");
+    }
+
+    private void OnBindingAction() {
         save_creds.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

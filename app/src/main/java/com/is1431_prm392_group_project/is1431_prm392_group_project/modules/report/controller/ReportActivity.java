@@ -11,18 +11,15 @@ import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
 public class ReportActivity extends AppCompatActivity {
-    GraphView graphView;
+    private GraphView graphView;
+    private ReportService service;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_report);
+    private void OnBindingView() {
         // on below line we are initializing our graph view.
         graphView = findViewById(R.id.idGraphView);
-        ReportService service = new ReportService(this);
         // on below line we are adding data to our graph view.
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(service.getReportGraphData());// after adding data to our line graph series.
-        // on below line we are setting
+        DataPoint[] statsArray = service.getReportGraphData();
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(statsArray);
         // title for our graph view.
         graphView.setTitle("Your training graph view");
         // on below line we are setting
@@ -34,5 +31,16 @@ public class ReportActivity extends AppCompatActivity {
         // on below line we are adding
         // data series to our graph view.
         graphView.addSeries(series);
+        graphView.getViewport().setXAxisBoundsManual(true);
+        graphView.getViewport().setMinX(1.0);
+        graphView.getViewport().setMaxX(statsArray.length);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_report);
+        service = new ReportService(this);
+        OnBindingView();
     }
 }
