@@ -1,6 +1,7 @@
 package com.is1431_prm392_group_project.is1431_prm392_group_project.modules.exercise.controller;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.R;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exercise.ExerciseList;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.exercise.providers.ExerciseService;
+import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.home.controller.HomeMenu;
 
 import java.util.ArrayList;
 
@@ -38,5 +40,11 @@ public class ExerciseActivity extends AppCompatActivity {
         ExerciseAdapter adapter = new ExerciseAdapter(this, exercises);
         rc_Exercise.setLayoutManager(new LinearLayoutManager(this));
         rc_Exercise.setAdapter(adapter);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(this, HomeMenu.class);
+        startActivity(i);
     }
 }
