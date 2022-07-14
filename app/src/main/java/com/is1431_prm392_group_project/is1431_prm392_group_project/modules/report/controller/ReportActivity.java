@@ -16,12 +16,12 @@ public class ReportActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_report);
         // on below line we are initializing our graph view.
         graphView = findViewById(R.id.idGraphView);
         ReportService service = new ReportService(this);
         // on below line we are adding data to our graph view.
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(service.getReportGraphData());
-        // after adding data to our line graph series.
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(service.getReportGraphData());// after adding data to our line graph series.
         // on below line we are setting
         // title for our graph view.
         graphView.setTitle("Your training graph view");
