@@ -1,13 +1,17 @@
 package com.is1431_prm392_group_project.is1431_prm392_group_project.dao.entity;
+
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.DatabaseHelper;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exercise.ExerciseList;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.PreparedQuery;
 import com.j256.ormlite.stmt.QueryBuilder;
+
 import java.sql.SQLException;
 import java.util.List;
+
 public class RepoExerciseList {
     Dao<ExerciseList, Integer> exerciseListDao;
+
     public RepoExerciseList(DatabaseHelper db) {
         try {
             exerciseListDao = db.getExerciseListDao();
@@ -16,6 +20,7 @@ public class RepoExerciseList {
             e.printStackTrace();
         }
     }
+
     public int create(ExerciseList exerciseList) {
         try {
             return exerciseListDao.create(exerciseList);
@@ -25,6 +30,7 @@ public class RepoExerciseList {
         }
         return 0;
     }
+
     public int update(ExerciseList exerciseList) {
         try {
             return exerciseListDao.update(exerciseList);
@@ -34,6 +40,7 @@ public class RepoExerciseList {
         }
         return 0;
     }
+
     public int delete(ExerciseList exerciseList) {
         try {
             return exerciseListDao.delete(exerciseList);
@@ -43,6 +50,7 @@ public class RepoExerciseList {
         }
         return 0;
     }
+
     public ExerciseList getByID(int id) {
         try {
             QueryBuilder<ExerciseList, Integer> qb = exerciseListDao.queryBuilder();
@@ -55,6 +63,7 @@ public class RepoExerciseList {
         }
         return null;
     }
+
     public List<ExerciseList> getAll() {
         try {
             return exerciseListDao.queryForAll();

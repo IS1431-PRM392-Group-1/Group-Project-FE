@@ -1,13 +1,17 @@
 package com.is1431_prm392_group_project.is1431_prm392_group_project.dao.entity;
+
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.DatabaseHelper;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.report.PracticeReport;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.PreparedQuery;
 import com.j256.ormlite.stmt.QueryBuilder;
+
 import java.sql.SQLException;
 import java.util.List;
+
 public class RepoPracticeReport {
     Dao<PracticeReport, Integer> practiceReportDao;
+
     public RepoPracticeReport(DatabaseHelper db) {
         try {
             practiceReportDao = db.getPracticeReportDao();
@@ -16,6 +20,7 @@ public class RepoPracticeReport {
             e.printStackTrace();
         }
     }
+
     public int create(PracticeReport practiceReport) {
         try {
             return practiceReportDao.create(practiceReport);
@@ -25,6 +30,7 @@ public class RepoPracticeReport {
         }
         return 0;
     }
+
     public int update(PracticeReport practiceReport) {
         try {
             return practiceReportDao.update(practiceReport);
@@ -34,6 +40,7 @@ public class RepoPracticeReport {
         }
         return 0;
     }
+
     public int delete(PracticeReport practiceReport) {
         try {
             return practiceReportDao.delete(practiceReport);
@@ -43,6 +50,7 @@ public class RepoPracticeReport {
         }
         return 0;
     }
+
     public PracticeReport getByID(int id) {
         try {
             QueryBuilder<PracticeReport, Integer> qb = practiceReportDao.queryBuilder();
@@ -55,6 +63,7 @@ public class RepoPracticeReport {
         }
         return null;
     }
+
     public List<PracticeReport> getAll() {
         try {
             return practiceReportDao.queryForAll();

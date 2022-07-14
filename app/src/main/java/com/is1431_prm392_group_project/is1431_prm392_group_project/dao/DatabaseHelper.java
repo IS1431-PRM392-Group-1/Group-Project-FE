@@ -22,18 +22,20 @@ import java.sql.SQLException;
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     private static final String DATABASE_NAME = "db.sqlite";
     private static final int DATABASE_VERSION = 1;
-    private Dao<User, String> userDao = null;
+    private Dao<User, Integer> userDao = null;
     private Dao<PracticeReport, Integer> practiceReportDao = null;
     private Dao<PersonalReport, Integer> personalReportDeo = null;
     private Dao<Exercise, Integer> exerciseDao = null;
     private Dao<ExerciseList, Integer> exerciseListDao = null;
     private Dao<Food, Integer> foodsDao = null;
 
+    private SQLiteDatabase database;
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         DatabaseInitializer initializer = new DatabaseInitializer(context);
         try {
             initializer.createDatabase();
+            database = initializer.getDatabase();
             initializer.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -45,6 +47,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
         try {
             Log.i(DatabaseHelper.class.getName(), "onCreate");
             TableUtils.createTable(connectionSource, User.class);
+            TableUtils.createTable(connectionSource, Food.class);
         } catch (SQLException e) {
             Log.e(DatabaseHelper.class.getName(), "Can't create database", e);
             throw new RuntimeException(e);
@@ -56,6 +59,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
         try {
             Log.i(DatabaseHelper.class.getName(), "onUpgrade");
             TableUtils.dropTable(connectionSource, User.class, true);
+            TableUtils.dropTable(connectionSource, Food.class, true);
             onCreate(db);
         } catch (SQLException e) {
             Log.e(DatabaseHelper.class.getName(), "Can't drop databases", e);
@@ -63,7 +67,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
         }
     }
 
-    public Dao<User, String> getUserDao() throws SQLException {
+    public Dao<User, Integer> getUserDao() throws SQLException {
         if (userDao == null) {
             userDao = DaoManager.createDao(getConnectionSource(), User.class);
         }

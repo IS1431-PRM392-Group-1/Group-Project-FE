@@ -9,13 +9,15 @@ import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.entity.Re
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.entity.RepoPracticeReport;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.entity.RepoUsers;
 
+import java.sql.SQLException;
+
 public class Repo {
     private RepoUsers Users;
     private RepoPracticeReport practiceReport;
     private RepoPersonalReport personalReport;
     private RepoExercise exercise;
     private RepoExerciseList exerciseList;
-    private RepoFood food;
+    private RepoFood Food;
     private DatabaseHelper db;
 
     public Repo(Context context) {
@@ -44,6 +46,6 @@ public class Repo {
     }
 
     public RepoFood getFood() {
-        return food = new RepoFood(db);
+        return Food = new RepoFood(db);
     }
 }

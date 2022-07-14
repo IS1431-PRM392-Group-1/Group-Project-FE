@@ -6,7 +6,7 @@ import com.j256.ormlite.field.DatabaseField;
 import java.sql.Date;
 
 public class PracticeReport {
-    @DatabaseField(id = true, generatedId = true)
+    @DatabaseField(id = true)
     int id;
     @DatabaseField
     double calo;

@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class AuthnDto {
-    public  class LoginDto{
+    public class LoginDto {
         @SerializedName("username")
         @Expose
         private Integer username;
