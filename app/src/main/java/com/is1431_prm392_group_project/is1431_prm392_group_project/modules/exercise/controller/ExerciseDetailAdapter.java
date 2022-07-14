@@ -13,29 +13,28 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.R;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exercise.Exercise;
+import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exercise.ExerciseAmount;
+import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.exercise.providers.ExerciseService;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import pl.droidsonroids.gif.GifImageView;
 
-
+// TODO
 public class ExerciseDetailAdapter extends RecyclerView.Adapter<ExerciseDetailAdapter.ExerciseDetailViewHolder> {
-
     Context context;
-    ArrayList<Exercise> exercises;
+    ArrayList<ExerciseAmount> exercises;
     LayoutInflater inflater;
-    int[] array;
-
     ExersiceDetail fragDetail;
+    private ExerciseService service;
 
-    public ExerciseDetailAdapter(Context context, ArrayList<Exercise> exercises) {
+    public ExerciseDetailAdapter(Context context, List<ExerciseAmount> exercises) {
         this.context = context;
-        this.exercises = exercises;
+        this.exercises = (ArrayList<ExerciseAmount>) exercises;
         inflater = LayoutInflater.from(context);
-        array = new int[]{R.drawable.exersice_1, R.drawable.exersice_2, R.drawable.exersice_3, R.drawable.exersice_4,
-                R.drawable.exersice_5, R.drawable.exersice_6, R.drawable.exersice_7, R.drawable.exersice_8, R.drawable.exersice_9,
-                R.drawable.exersice_10, R.drawable.exersice_11, R.drawable.exersice_12, R.drawable.exersice_13, R.drawable.exersice_14,
-                R.drawable.exersice_15};
+        service = new ExerciseService(context);
+
     }
 
     @NonNull
@@ -47,21 +46,16 @@ public class ExerciseDetailAdapter extends RecyclerView.Adapter<ExerciseDetailAd
 
     @Override
     public void onBindViewHolder(@NonNull ExerciseDetailViewHolder holder, int position) {
-        Exercise exercise = exercises.get(position);
+        ExerciseAmount exercise_amount = exercises.get(position);
+        Exercise exercise = exercise_amount.getExercise();
         holder.txtName.setText(exercise.getName());
-        holder.textTime.setText(exercise.getTime() + "times");
-        holder.txt_perday.setText(exercise.getTimes() + "MIN");
-        holder.gifImageView.setImageResource(array[exercise.getDetail_gif_id()]);
-
-        holder.btn_exercise_detail.setOnClickListener(this::onClickShowFragment);
+        holder.txt_perday.setText(exercise.getTime() * exercise_amount.getAmount() + "MIN");
+        holder.gifImageView.setImageDrawable(context.getResources().getDrawable(exercise.getDetail_gif_id()));
+        holder.btn_exercise_detail.setOnClickListener(v -> onClickShowFragment(exercise_amount));
     }
 
-    private void onClickShowFragment(View view) {
-        //show fragment
-        //demo start a activity
-//        AppCompatActivity activity = (AppCompatActivity) view.getContext();
-//        fragDetail = new ExersiceDetail();
-//        activity.getSupportFragmentManager().beginTransaction().replace(R.id.exerciseActivity, fragDetail).addToBackStack(null).commit();
+    private void onClickShowFragment(ExerciseAmount exercise_amount) {
+        service.saveCaloReport(exercise_amount);
         Intent intent = new Intent(context, StartExercise.class);
         context.startActivity(intent);
     }
@@ -72,7 +66,6 @@ public class ExerciseDetailAdapter extends RecyclerView.Adapter<ExerciseDetailAd
     }
 
     public static class ExerciseDetailViewHolder extends RecyclerView.ViewHolder {
-
         private TextView txtName, textTime, txt_perday;
         private GifImageView gifImageView;
         private ImageView btn_exercise_detail;

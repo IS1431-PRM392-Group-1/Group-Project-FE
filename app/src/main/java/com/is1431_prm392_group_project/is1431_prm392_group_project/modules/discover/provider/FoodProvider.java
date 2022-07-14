@@ -3,8 +3,6 @@ package com.is1431_prm392_group_project.is1431_prm392_group_project.modules.disc
 import android.content.Context;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.food.Food;
-import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.user.User;
-import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.profile.provider.IProfileProvider;
 
 import java.util.List;
 
@@ -13,7 +11,7 @@ public class FoodProvider extends IFoodProvider {
         super(context);
     }
 
-    public List<Food> getFoods(){
-      return   repo.getFood().getAll();
+    public List<Food> getFoods() {
+        return repo.getFood().getAll();
     }
 }

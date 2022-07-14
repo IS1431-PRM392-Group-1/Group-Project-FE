@@ -28,5 +28,4 @@ public class AuthnDto {
             this.password = password;
         }
     }
-
 }

@@ -6,12 +6,17 @@ import com.j256.ormlite.field.DatabaseField;
 import java.sql.Date;
 
 public class PracticeReport {
-    @DatabaseField(id = true)
+    @DatabaseField(generatedId = true)
     int id;
     @DatabaseField
-    double calo;
+    int calo;
     @DatabaseField
     Date date;
+
+    public PracticeReport(int calo, Date date) {
+        this.calo = calo;
+        this.date = date;
+    }
 
     public PracticeReport() {
     }
@@ -20,11 +25,11 @@ public class PracticeReport {
         return id;
     }
 
-    public double getCalo() {
+    public int getCalo() {
         return calo;
     }
 
-    public void setCalo(double calo) {
+    public void setCalo(int calo) {
         this.calo = calo;
     }
 

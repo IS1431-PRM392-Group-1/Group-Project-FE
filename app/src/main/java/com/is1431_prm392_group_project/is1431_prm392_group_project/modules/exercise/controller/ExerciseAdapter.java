@@ -19,27 +19,21 @@ import java.util.ArrayList;
 
 import pl.droidsonroids.gif.GifImageView;
 
-
+// TODO
 public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder> {
-
     Context context;
     ArrayList<ExerciseList> exercises;
     LayoutInflater inflater;
-
     ExersiceDetail fragDetail;
     FragmentManager fragManager;
     FragmentTransaction transaction;
 
-    int[] array;
 
     public ExerciseAdapter(Context context, ArrayList<ExerciseList> exercises) {
         this.context = context;
         this.exercises = exercises;
         inflater = LayoutInflater.from(context);
-        array = new int[]{R.drawable.exersice_1, R.drawable.exersice_2, R.drawable.exersice_3, R.drawable.exersice_4,
-                R.drawable.exersice_5, R.drawable.exersice_6, R.drawable.exersice_7, R.drawable.exersice_8, R.drawable.exersice_9,
-                R.drawable.exersice_10, R.drawable.exersice_11, R.drawable.exersice_12, R.drawable.exersice_13, R.drawable.exersice_14,
-                R.drawable.exersice_15};
+
     }
 
     @NonNull
@@ -55,17 +49,15 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
         holder.txtName.setText(exercise.getName());
         holder.textTime.setText(exercise.getTime());
         holder.txt_perday.setText(exercise.getPerday());
-        holder.gifImageView.setImageResource(array[exercise.getSrc_gif_id()]);
-
-
-        holder.btn_start_exercise.setOnClickListener(this::onStartExerciseActivity);
+        holder.gifImageView.setImageDrawable(context.getResources().getDrawable(exercise.getSrc_gif_id()));
+        holder.btn_start_exercise.setOnClickListener(v -> onStartExerciseActivity(exercise.getId()));
     }
 
-    private void onStartExerciseActivity(View view) {
+    private void onStartExerciseActivity(int index) {
         Intent intent = new Intent(context, StartActivity.class);
+        intent.putExtra("list_id", index + "");
         context.startActivity(intent);
     }
-
 
     @Override
     public int getItemCount() {
@@ -73,7 +65,6 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
     }
 
     public static class ExerciseViewHolder extends RecyclerView.ViewHolder {
-
         private TextView txtName, textTime, txt_perday, btn_start_exercise;
         private GifImageView gifImageView;
 
@@ -90,5 +81,4 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
             gifImageView = exerciseView.findViewById(R.id.gif_exercise);
         }
     }
-
 }

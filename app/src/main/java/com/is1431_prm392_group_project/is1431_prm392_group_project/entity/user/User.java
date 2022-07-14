@@ -2,12 +2,10 @@ package com.is1431_prm392_group_project.is1431_prm392_group_project.entity.user;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.Repo;
 import com.j256.ormlite.field.DatabaseField;
-import com.j256.ormlite.table.DatabaseTable;
 
 public class User {
     @DatabaseField(id = true)
     int id;
-
     @DatabaseField()
     String username;
     @DatabaseField
@@ -111,5 +109,4 @@ public class User {
     public int delete(Repo repo) {
         return repo.getUsers().delete(this);
     }
-
 }

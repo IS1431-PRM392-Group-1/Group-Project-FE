@@ -11,9 +11,6 @@ import android.widget.TextView;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.R;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.food.Food;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
 import java.util.List;
 
 public class FoodAdapter extends ArrayAdapter {
@@ -21,15 +18,14 @@ public class FoodAdapter extends ArrayAdapter {
     private int resources;
     private List<Food> items;
 
-    public FoodAdapter( Context mCtx, int resources,  List<Food> items) {
+    public FoodAdapter(Context mCtx, int resources, List<Food> items) {
         super(mCtx, resources, items);
         this.mCtx = mCtx;
         this.resources = resources;
         this.items = items;
     }
 
-
-    public View getView(int position,  View convertView,  ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater var = LayoutInflater.from(this.mCtx);
         LayoutInflater layoutInflater = var;
         View var10 = layoutInflater.inflate(this.resources, (ViewGroup) null);
@@ -47,12 +43,11 @@ public class FoodAdapter extends ArrayAdapter {
         return view;
     }
 
-
     public final Context getMCtx() {
         return this.mCtx;
     }
 
-    public final void setMCtx( Context var1) {
+    public final void setMCtx(Context var1) {
         this.mCtx = var1;
     }
 
@@ -64,12 +59,11 @@ public class FoodAdapter extends ArrayAdapter {
         this.resources = var1;
     }
 
-
     public final List<Food> getItems() {
         return this.items;
     }
 
-    public final void setItems( List<Food> var1) {
+    public final void setItems(List<Food> var1) {
         this.items = var1;
     }
 }

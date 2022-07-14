@@ -1,5 +1,6 @@
 package com.is1431_prm392_group_project.is1431_prm392_group_project.modules.exercise.controller;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,13 +8,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.R;
-import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exercise.Exercise;
+import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exercise.ExerciseAmount;
+import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.exercise.providers.ExerciseService;
 
 import java.util.ArrayList;
+import java.util.List;
 
+// TODO
 public class StartActivity extends AppCompatActivity {
-    private final ArrayList<Exercise> exercises = new ArrayList<>();
+    private List<ExerciseAmount> exercises = new ArrayList<>();
     private RecyclerView rc_Exercise;
+    private ExerciseService service;
 
     private void bindingView() {
         rc_Exercise = findViewById(R.id.rc_exercise_detail);
@@ -23,13 +28,16 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+        service = new ExerciseService(this);
+        Intent intent = getIntent();
+        String str = intent.getStringExtra("list_id");
+        exercises = service.getExerciseAmount(str);
         bindingView();
         initRecyclerView();
-
     }
 
     private void initRecyclerView() {
-        ExerciseDetailAdapter adapter = new ExerciseDetailAdapter(this, exercises);
+        ExerciseDetailAdapter adapter = new ExerciseDetailAdapter(this, this.exercises);
         rc_Exercise.setLayoutManager(new LinearLayoutManager(this));
         rc_Exercise.setAdapter(adapter);
     }

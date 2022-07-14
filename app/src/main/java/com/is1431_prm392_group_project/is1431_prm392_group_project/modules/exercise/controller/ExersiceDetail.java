@@ -10,19 +10,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.R;
-import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exercise.Exercise;
+import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exercise.ExerciseAmount;
 
 import java.util.ArrayList;
 
-
+// TODO
 public class ExersiceDetail extends Fragment {
-
     private RecyclerView rc_ExerciseDetail;
-    private ArrayList<Exercise> exercises;
+    private ArrayList<ExerciseAmount> exercises;
 
     public ExersiceDetail() {
         // Required empty public constructor
-
     }
 
     @Override
@@ -30,12 +28,8 @@ public class ExersiceDetail extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_exersice_detail, container, false);
-
         rc_ExerciseDetail.setLayoutManager(new LinearLayoutManager(getContext()));
-
-
         rc_ExerciseDetail.setAdapter(new ExerciseDetailAdapter(getContext(), exercises));
         return view;
     }
-
 }

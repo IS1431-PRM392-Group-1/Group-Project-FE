@@ -12,8 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.R;
 
+// TODO
 public class StartExercise extends AppCompatActivity {
-
     private Button txt_start;
     private TextView txt_time;
     private long millimsln = 0;
@@ -30,14 +30,11 @@ public class StartExercise extends AppCompatActivity {
     private void clickBtnTimeStart(View view) {
         String mun = txt_time.getText().toString().substring(0, 3).trim();
         String num2 = txt_time.getText().toString().substring(4, 7).trim();
-
         int time_values = Integer.parseInt(mun) * 60 + Integer.parseInt(num2);
-
         millimsln = time_values * 1000;
         CountDownTimer count = new CountDownTimer(millimsln, 1000) {
             @Override
             public void onTick(long l) {
-
                 millimsln = l;
                 updateTime();
             }
@@ -49,7 +46,6 @@ public class StartExercise extends AppCompatActivity {
                 startActivity(i);
             }
         }.start();
-
         txt_start.setEnabled(false);
     }
 
@@ -57,7 +53,6 @@ public class StartExercise extends AppCompatActivity {
         int mun = (int) millimsln / 60000;
         int sec = (int) millimsln % 60000 / 1000;
         String txtMun, txtsec;
-
         if (mun < 10) {
             txtMun = "0" + mun;
         } else {
@@ -68,10 +63,8 @@ public class StartExercise extends AppCompatActivity {
         } else {
             txtsec = sec + "";
         }
-
         txt_time.setText(txtMun + " : " + txtsec);
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

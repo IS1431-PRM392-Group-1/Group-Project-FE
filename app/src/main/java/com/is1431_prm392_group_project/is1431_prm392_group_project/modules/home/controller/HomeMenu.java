@@ -30,12 +30,10 @@ public class HomeMenu extends AppCompatActivity implements NavigationView.OnNavi
         toolbar =
                 (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         nav =
                 (NavigationView) findViewById(R.id.nav_view);
         drawerLayout =
                 (DrawerLayout) findViewById(R.id.drawer_layout);
-
         toggle =
                 new ActionBarDrawerToggle(
                         this,
@@ -58,13 +56,11 @@ public class HomeMenu extends AppCompatActivity implements NavigationView.OnNavi
         setContentView(R.layout.activity_home_menu);
         onBindingView();
         onBindingAction();
-
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-
         if (id == R.id.nav_workout_list) {
             Intent intent1 = new Intent(HomeMenu.this, ExerciseActivity.class);
             startActivity(intent1);

@@ -5,9 +5,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exercise.Exercise;
+import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exercise.ExerciseAmount;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exercise.ExerciseList;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.food.Food;
-import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.report.PersonalReport;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.report.PracticeReport;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.user.User;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
@@ -24,18 +24,16 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private Dao<User, Integer> userDao = null;
     private Dao<PracticeReport, Integer> practiceReportDao = null;
-    private Dao<PersonalReport, Integer> personalReportDeo = null;
     private Dao<Exercise, Integer> exerciseDao = null;
     private Dao<ExerciseList, Integer> exerciseListDao = null;
     private Dao<Food, Integer> foodsDao = null;
+    private Dao<ExerciseAmount, Integer> exerciseAmountDao = null;
 
-    private SQLiteDatabase database;
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         DatabaseInitializer initializer = new DatabaseInitializer(context);
         try {
             initializer.createDatabase();
-            database = initializer.getDatabase();
             initializer.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -48,6 +46,10 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
             Log.i(DatabaseHelper.class.getName(), "onCreate");
             TableUtils.createTable(connectionSource, User.class);
             TableUtils.createTable(connectionSource, Food.class);
+            TableUtils.createTable(connectionSource, Exercise.class);
+            TableUtils.createTable(connectionSource, ExerciseList.class);
+            TableUtils.createTable(connectionSource, ExerciseAmount.class);
+            TableUtils.createTable(connectionSource, PracticeReport.class);
         } catch (SQLException e) {
             Log.e(DatabaseHelper.class.getName(), "Can't create database", e);
             throw new RuntimeException(e);
@@ -60,6 +62,10 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
             Log.i(DatabaseHelper.class.getName(), "onUpgrade");
             TableUtils.dropTable(connectionSource, User.class, true);
             TableUtils.dropTable(connectionSource, Food.class, true);
+            TableUtils.dropTable(connectionSource, Exercise.class, true);
+            TableUtils.dropTable(connectionSource, ExerciseList.class, true);
+            TableUtils.dropTable(connectionSource, ExerciseAmount.class, true);
+            TableUtils.dropTable(connectionSource, PracticeReport.class, true);
             onCreate(db);
         } catch (SQLException e) {
             Log.e(DatabaseHelper.class.getName(), "Can't drop databases", e);
@@ -79,10 +85,10 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
         super.close();
         userDao = null;
         practiceReportDao = null;
-        personalReportDeo = null;
         exerciseDao = null;
         exerciseListDao = null;
         foodsDao = null;
+        exerciseAmountDao = null;
     }
 
     public Dao<PracticeReport, Integer> getPracticeReportDao() throws SQLException {
@@ -90,13 +96,6 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
             practiceReportDao = DaoManager.createDao(getConnectionSource(), PracticeReport.class);
         }
         return practiceReportDao;
-    }
-
-    public Dao<PersonalReport, Integer> getPersonalReportDao() throws SQLException {
-        if (personalReportDeo == null) {
-            personalReportDeo = DaoManager.createDao(getConnectionSource(), PersonalReport.class);
-        }
-        return personalReportDeo;
     }
 
     public Dao<ExerciseList, Integer> getExerciseListDao() throws SQLException {
@@ -118,5 +117,12 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
             foodsDao = DaoManager.createDao(getConnectionSource(), Food.class);
         }
         return foodsDao;
+    }
+
+    public Dao<ExerciseAmount, Integer> getExerciseAmountDao() throws SQLException {
+        if (exerciseAmountDao == null) {
+            exerciseAmountDao = DaoManager.createDao(getConnectionSource(), ExerciseAmount.class);
+        }
+        return exerciseAmountDao;
     }
 }

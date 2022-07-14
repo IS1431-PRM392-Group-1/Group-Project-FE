@@ -1,10 +1,7 @@
 package com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exercise;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.Repo;
-import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
-
-import java.util.Map;
 
 public class ExerciseList {
     @DatabaseField(id = true)
@@ -19,7 +16,6 @@ public class ExerciseList {
     private int src_gif_id;
 
     public ExerciseList() {
-
     }
 
     public ExerciseList(int id, String name, String time, String perday, int src_gif_id) {
@@ -29,7 +25,6 @@ public class ExerciseList {
         this.perday = perday;
         this.src_gif_id = src_gif_id;
     }
-
 
     public int getSrc_gif_id() {
         return src_gif_id;

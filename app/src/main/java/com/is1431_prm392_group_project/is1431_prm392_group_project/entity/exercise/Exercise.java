@@ -9,22 +9,29 @@ public class Exercise {
     @DatabaseField
     private String name;
     @DatabaseField
-    private int times;
-    @DatabaseField
+    // second
     private int time;
     @DatabaseField
     private int detail_gif_id;
+    @DatabaseField
+    private int calo;
 
     public Exercise() {
-
     }
 
-    public Exercise(int id, String name, int times, int time, int detail_gif_id) {
+    public Exercise(int id, String name, int time, int detail_gif_id, int calo) {
         this.id = id;
         this.name = name;
-        this.times = times;
         this.time = time;
         this.detail_gif_id = detail_gif_id;
+    }
+
+    public int getCalo() {
+        return calo;
+    }
+
+    public void setCalo(int calo) {
+        this.calo = calo;
     }
 
     public int getDetail_gif_id() {
@@ -51,14 +58,6 @@ public class Exercise {
         this.name = name;
     }
 
-    public int getTimes() {
-        return times;
-    }
-
-    public void setTimes(int times) {
-        this.times = times;
-    }
-
     public int getTime() {
         return time;
     }
@@ -72,7 +71,6 @@ public class Exercise {
         return "ExerciseDetail{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", times=" + times +
                 ", time=" + time +
                 '}';
     }

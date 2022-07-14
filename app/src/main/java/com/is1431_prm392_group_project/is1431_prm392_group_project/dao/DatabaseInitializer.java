@@ -14,16 +14,15 @@ public class DatabaseInitializer extends SQLiteOpenHelper {
     private static String DB_PATH = "/data/data/com.is1431_prm392_group_project.is1431_prm392_group_project/databases/";
     private static String DB_NAME = "db.sqlite";
     private final Context context;
-
-    public SQLiteDatabase getDatabase() {
-        return database;
-    }
-
     private SQLiteDatabase database;
 
     public DatabaseInitializer(Context context) {
         super(context, DB_NAME, null, 1);
         this.context = context;
+    }
+
+    public SQLiteDatabase getDatabase() {
+        return database;
     }
 
     public void createDatabase() throws IOException {
@@ -74,7 +73,6 @@ public class DatabaseInitializer extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
     }
 
     @Override

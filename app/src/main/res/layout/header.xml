@@ -18,6 +18,4 @@
         android:layout_height="wrap_content"
         android:text="Java Android Project"
         android:textSize="18sp" />
-
-
 </LinearLayout>

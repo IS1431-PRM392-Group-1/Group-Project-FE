@@ -3,26 +3,28 @@ package com.is1431_prm392_group_project.is1431_prm392_group_project.dao;
 import android.content.Context;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.entity.RepoExercise;
+import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.entity.RepoExerciseAmount;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.entity.RepoExerciseList;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.entity.RepoFood;
-import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.entity.RepoPersonalReport;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.entity.RepoPracticeReport;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.entity.RepoUsers;
-
-import java.sql.SQLException;
 
 public class Repo {
     private RepoUsers Users;
     private RepoPracticeReport practiceReport;
-    private RepoPersonalReport personalReport;
     private RepoExercise exercise;
     private RepoExerciseList exerciseList;
     private RepoFood Food;
+    private RepoExerciseAmount exerciseAmount;
     private DatabaseHelper db;
 
     public Repo(Context context) {
         DatabaseManager<DatabaseHelper> manager = new DatabaseManager<DatabaseHelper>();
         db = manager.getHelper(context);
+    }
+
+    public RepoExerciseAmount getExerciseAmount() {
+        return exerciseAmount = new RepoExerciseAmount(db);
     }
 
     public RepoUsers getUsers() {
@@ -31,10 +33,6 @@ public class Repo {
 
     public RepoPracticeReport getPracticeReport() {
         return practiceReport = new RepoPracticeReport(db);
-    }
-
-    public RepoPersonalReport getPersonalReport() {
-        return personalReport = new RepoPersonalReport(db);
     }
 
     public RepoExercise getExercise() {
