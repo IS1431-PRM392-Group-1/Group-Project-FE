@@ -2,45 +2,41 @@ package com.is1431_prm392_group_project.is1431_prm392_group_project.entity.food;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.Repo;
 import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 
 public class Food {
-    NumberFormat format = new DecimalFormat("0.#");
-    @DatabaseField(id = true, generatedId = true)
+    @DatabaseField(id = true)
     int id;
     @DatabaseField
-    String name;
+    private String title;
     @DatabaseField
-    double calo;
+    private String description;
+
+    @DatabaseField
+    private int img;
 
     public Food() {
+
     }
 
-    public Food(String name, double calo) {
-        this.name = name;
-        this.calo = calo;
+    public Food(int id,String title, String description, int img) {
+       this.id = id;
+        this.title = title;
+        this.description = description;
+        this.img = img;
     }
 
-    public int getId() {
-        return id;
+    public String getTitle() {
+        return this.title;
     }
 
-    public String getName() {
-        return name;
+    public final String getDescription() {
+        return this.description;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCalo() {
-        return format.format(calo);
-    }
-
-    public void setCalo(double calo) {
-        this.calo = calo;
+    public final int getImg() {
+        return this.img;
     }
 
     public int update(Repo repo) throws Exception {

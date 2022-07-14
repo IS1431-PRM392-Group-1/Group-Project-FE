@@ -4,22 +4,43 @@ import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.Repo;
 import com.j256.ormlite.field.DatabaseField;
 
 public class Exercise {
-    @DatabaseField(id = true, generatedId = true)
+    @DatabaseField(id = true)
     int id;
     @DatabaseField
-    String name;
+    private String name;
     @DatabaseField
-    private String time;
+    private int times;
     @DatabaseField
-    private String perday;
+    private int time;
     @DatabaseField
-    private String src_gif;
+    private int detail_gif_id;
 
     public Exercise() {
+
+    }
+
+    public Exercise(int id, String name, int times, int time, int detail_gif_id) {
+        this.id = id;
+        this.name = name;
+        this.times = times;
+        this.time = time;
+        this.detail_gif_id = detail_gif_id;
+    }
+
+    public int getDetail_gif_id() {
+        return detail_gif_id;
+    }
+
+    public void setDetail_gif_id(int detail_gif_id) {
+        this.detail_gif_id = detail_gif_id;
     }
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -30,28 +51,30 @@ public class Exercise {
         this.name = name;
     }
 
-    public String getTime() {
+    public int getTimes() {
+        return times;
+    }
+
+    public void setTimes(int times) {
+        this.times = times;
+    }
+
+    public int getTime() {
         return time;
     }
 
-    public void setTime(String time) {
+    public void setTime(int time) {
         this.time = time;
     }
 
-    public String getPerday() {
-        return perday;
-    }
-
-    public void setPerday(String perday) {
-        this.perday = perday;
-    }
-
-    public String getSrc_gif() {
-        return src_gif;
-    }
-
-    public void setSrc_gif(String src_gif) {
-        this.src_gif = src_gif;
+    @Override
+    public String toString() {
+        return "ExerciseDetail{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", times=" + times +
+                ", time=" + time +
+                '}';
     }
 
     public int update(Repo repo) throws Exception {

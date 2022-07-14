@@ -26,5 +26,11 @@
         <activity android:name=".modules.auth.controller.LoginActivity"></activity>
         <activity android:name=".modules.auth.controller.RegisterActivity"></activity>
         <activity android:name=".modules.auth.controller.ForgotPasswordActivity"></activity>
+        <activity android:name=".modules.exercise.controller.StartActivity" />
+        <activity android:name=".modules.exercise.controller.StartExercise" />
+        <activity android:name=".modules.exercise.controller.ExerciseActivity" />
+        <activity android:name=".modules.profile.controller.ProfileActivity" />
+        <activity android:name=".modules.discover.controller.FoodDiscoverActivity" />
+        <activity android:name=".modules.report.controller.ReportActivity" />
     </application>
 </manifest>

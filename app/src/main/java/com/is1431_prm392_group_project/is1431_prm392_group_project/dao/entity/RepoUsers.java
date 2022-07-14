@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class RepoUsers {
-    Dao<User, String> userDao;
+    Dao<User, Integer> userDao;
 
     public RepoUsers(DatabaseHelper db) {
         try {
@@ -51,10 +51,10 @@ public class RepoUsers {
         return 0;
     }
 
-    public User getByUsername(String username) {
+    public User getById(int id) {
         try {
-            QueryBuilder<User, String> qb = userDao.queryBuilder();
-            qb.where().eq("username", username);
+            QueryBuilder<User, Integer> qb = userDao.queryBuilder();
+            qb.where().eq("id", id);
             PreparedQuery<User> pq = qb.prepare();
             return userDao.queryForFirst(pq);
         } catch (SQLException e) {

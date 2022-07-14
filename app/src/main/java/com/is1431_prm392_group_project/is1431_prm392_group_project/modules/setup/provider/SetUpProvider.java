@@ -10,7 +10,8 @@ public class SetUpProvider extends ISetUpProvider {
     }
 
     public void insertProfile(String name, int age, float height, float weight, String gender, String email) throws Exception {
-        User profile = repo.getUsers().getByUsername(name);
+        User profile = new User();
+        profile.setId(1);
         profile.setName(name);
         profile.setAge(age);
         profile.setHeight(height);

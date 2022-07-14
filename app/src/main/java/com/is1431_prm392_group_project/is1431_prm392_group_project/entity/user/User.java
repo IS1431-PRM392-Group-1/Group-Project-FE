@@ -2,22 +2,38 @@ package com.is1431_prm392_group_project.is1431_prm392_group_project.entity.user;
 
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.Repo;
 import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
 public class User {
     @DatabaseField(id = true)
+    int id;
+
+    @DatabaseField()
     String username;
     @DatabaseField
     String password;
     @DatabaseField
     String email;
+    @DatabaseField
+    String name;
+    @DatabaseField
+    int age;
+    @DatabaseField
+    float height;
+    @DatabaseField
+    float weight;
+    @DatabaseField
+    String gender;
 
     public User() {
     }
 
-    public User(String username, String password, String email) {
-        this.username = username;
-        this.password = password;
-        this.email = email;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -44,8 +60,48 @@ public class User {
         this.email = email;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public float getHeight() {
+        return height;
+    }
+
+    public void setHeight(float height) {
+        this.height = height;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     public int update(Repo repo) throws Exception {
-        if (repo.getUsers().getByUsername(username) == null) {
+        if (repo.getUsers().getById(id) == null) {
             return repo.getUsers().create(this);
         } else {
             return repo.getUsers().update(this);
@@ -56,18 +112,4 @@ public class User {
         return repo.getUsers().delete(this);
     }
 
-    public void setName(String name) {
-    }
-
-    public void setAge(int age) {
-    }
-
-    public void setHeight(float height) {
-    }
-
-    public void setWeight(float weight) {
-    }
-
-    public void setGender(String gender) {
-    }
 }
