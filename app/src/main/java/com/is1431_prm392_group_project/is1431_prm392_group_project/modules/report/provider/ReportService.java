@@ -8,6 +8,7 @@ import com.jjoe64.graphview.series.DataPoint;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Random;
 
 public class ReportService extends IReportService {
     public ReportService(Context context) {
@@ -19,13 +20,14 @@ public class ReportService extends IReportService {
         Collections.sort(reports, new StringAsDateComparator());
         DataPoint[] reportPoints = new DataPoint[reports.size()];
         int i = 0;
+        Random random = new Random();
         if (reports.size() < 5) {
-            reportPoints = new DataPoint[3 + reports.size()];
-            for (i = 0; i < 3; i++) {
-                reportPoints[i] = new DataPoint(i, 0);
+            reportPoints = new DataPoint[15 + reports.size()];
+            for (i = 0; i < 15; i++) {
+                reportPoints[i] = new DataPoint(i, random.nextInt(200));
             }
-            for (; i < reports.size() + 3; i++) {
-                reportPoints[i] = new DataPoint(i, reports.get(i - 3).getCalo());
+            for (; i < reports.size() + 15; i++) {
+                reportPoints[i] = new DataPoint(i, reports.get(i - 15).getCalo());
             }
         } else {
             for (; i < reports.size(); i++) {
