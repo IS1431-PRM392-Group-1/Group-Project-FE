@@ -18,7 +18,14 @@ public class ReportService extends IReportService {
         List<PracticeReport> reports = repo.getPracticeReport().getAll();
         Collections.sort(reports, new StringAsDateComparator());
         DataPoint[] reportPoints = new DataPoint[reports.size()];
-        for (int i = 0; i < reports.size(); i++) {
+        int i =0;
+        if(reports.size()<5){
+            reportPoints = new DataPoint[3+reports.size()];
+            for (i = 0; i < 3; i++) {
+                reportPoints[i] = new DataPoint(i, 0);
+            }
+        }
+        for (; i < reports.size(); i++) {
             reportPoints[i] = new DataPoint(i, reports.get(i).getCalo());
         }
         return reportPoints;
