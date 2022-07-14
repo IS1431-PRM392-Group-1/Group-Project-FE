@@ -28,12 +28,10 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
     FragmentManager fragManager;
     FragmentTransaction transaction;
 
-
     public ExerciseAdapter(Context context, ArrayList<ExerciseList> exercises) {
         this.context = context;
         this.exercises = exercises;
         inflater = LayoutInflater.from(context);
-
     }
 
     @NonNull

@@ -3,26 +3,18 @@ package com.is1431_prm392_group_project.is1431_prm392_group_project.entity.repor
 import com.is1431_prm392_group_project.is1431_prm392_group_project.dao.Repo;
 import com.j256.ormlite.field.DatabaseField;
 
-import java.sql.Date;
-
 public class PracticeReport {
-    @DatabaseField(generatedId = true)
-    int id;
+    @DatabaseField(id = true)
+    String date;
     @DatabaseField
     int calo;
-    @DatabaseField
-    Date date;
 
-    public PracticeReport(int calo, Date date) {
+    public PracticeReport(int calo, String date) {
         this.calo = calo;
         this.date = date;
     }
 
     public PracticeReport() {
-    }
-
-    public int getId() {
-        return id;
     }
 
     public int getCalo() {
@@ -33,24 +25,16 @@ public class PracticeReport {
         this.calo = calo;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    private int save(Repo repo) {
-        if (repo.getPracticeReport().getByID(id) == null) {
-            return repo.getPracticeReport().create(this);
-        } else {
-            return repo.getPracticeReport().update(this);
-        }
-    }
-
     public int update(Repo repo) throws Exception {
-        if (repo.getPracticeReport().getByID(id) == null) {
+        if (repo.getPracticeReport().getByDate(date) == null) {
             return repo.getPracticeReport().create(this);
         } else {
             return repo.getPracticeReport().update(this);

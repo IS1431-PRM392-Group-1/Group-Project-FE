@@ -34,7 +34,6 @@ public class ExerciseDetailAdapter extends RecyclerView.Adapter<ExerciseDetailAd
         this.exercises = (ArrayList<ExerciseAmount>) exercises;
         inflater = LayoutInflater.from(context);
         service = new ExerciseService(context);
-
     }
 
     @NonNull

@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class RepoPracticeReport {
-    Dao<PracticeReport, Integer> practiceReportDao;
+    Dao<PracticeReport, String> practiceReportDao;
 
     public RepoPracticeReport(DatabaseHelper db) {
         try {
@@ -51,10 +51,10 @@ public class RepoPracticeReport {
         return 0;
     }
 
-    public PracticeReport getByID(int id) {
+    public PracticeReport getByDate(String date) {
         try {
-            QueryBuilder<PracticeReport, Integer> qb = practiceReportDao.queryBuilder();
-            qb.where().eq("id", id);
+            QueryBuilder<PracticeReport, String> qb = practiceReportDao.queryBuilder();
+            qb.where().eq("date", date);
             PreparedQuery<PracticeReport> pq = qb.prepare();
             return practiceReportDao.queryForFirst(pq);
         } catch (SQLException e) {

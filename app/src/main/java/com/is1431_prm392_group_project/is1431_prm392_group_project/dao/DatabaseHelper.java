@@ -23,7 +23,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     private static final String DATABASE_NAME = "db.sqlite";
     private static final int DATABASE_VERSION = 1;
     private Dao<User, Integer> userDao = null;
-    private Dao<PracticeReport, Integer> practiceReportDao = null;
+    private Dao<PracticeReport, String> practiceReportDao = null;
     private Dao<Exercise, Integer> exerciseDao = null;
     private Dao<ExerciseList, Integer> exerciseListDao = null;
     private Dao<Food, Integer> foodsDao = null;
@@ -91,7 +91,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
         exerciseAmountDao = null;
     }
 
-    public Dao<PracticeReport, Integer> getPracticeReportDao() throws SQLException {
+    public Dao<PracticeReport, String> getPracticeReportDao() throws SQLException {
         if (practiceReportDao == null) {
             practiceReportDao = DaoManager.createDao(getConnectionSource(), PracticeReport.class);
         }

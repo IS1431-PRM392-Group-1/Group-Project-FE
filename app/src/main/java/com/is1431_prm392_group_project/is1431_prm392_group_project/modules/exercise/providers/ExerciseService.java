@@ -7,6 +7,7 @@ import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exerci
 import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.report.PracticeReport;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -25,17 +26,25 @@ public class ExerciseService extends IExerciseService {
         return (ArrayList<ExerciseList>) repo.getExerciseList().getAll();
     }
 
-    public boolean saveCaloReport(ExerciseAmount exerciseAmounts) {
+    public void saveCaloReport(ExerciseAmount exerciseAmounts) {
         int calo = exerciseAmounts.getExercise().getCalo() * exerciseAmounts.getAmount();
-
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date(Calendar.getInstance().getTimeInMillis());
-        PracticeReport practiceReport = new PracticeReport(calo, date);
-        try {
-            practiceReport.update(repo);
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
+        PracticeReport practiceReport = repo.getPracticeReport().getByDate(dateFormat.format(date));
+        if (practiceReport == null) {
+            practiceReport = new PracticeReport(calo, dateFormat.format(date));
+            try {
+                practiceReport.update(repo);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            practiceReport.setCalo(practiceReport.getCalo() + calo);
+            try {
+                practiceReport.update(repo);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 }

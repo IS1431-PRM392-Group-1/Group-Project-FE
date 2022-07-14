@@ -102,7 +102,6 @@ public class InitProvider {
             for (int i = 1; i < 10; i++) {
                 exerciseLists.add(new ExerciseList(i, "random_list_" + i, "random_time_" + i, "random_per_day_" + i, R.drawable.exersice_1));
             }
-
             for (ExerciseList ex : exerciseLists
             ) {
                 ex.update(repo);
