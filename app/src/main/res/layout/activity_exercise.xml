@@ -9,24 +9,27 @@
     tools:context=".modules.exercise.controller.ExerciseActivity"
     tools:openDrawer="start">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="#fff">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolBar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@color/design_default_color_primary_dark"
-            android:gravity="end"
-            android:textAlignment="textEnd"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:title="Gym Master"
-            app:titleTextColor="#fff" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/design_default_color_primary_dark"
+        android:gravity="end"
+        android:textAlignment="textEnd"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/app_name"
+        app:titleTextColor="#fff" />
+
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rc_exercise"

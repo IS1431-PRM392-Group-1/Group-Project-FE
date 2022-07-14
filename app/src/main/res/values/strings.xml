@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Workout Support Application</string>
+    <string name="app_name">Workout Support</string>
     <string name="Open">Open</string>
     <string name="Close">Close</string>
     <string name="workout_timer">Workout Timer</string>
