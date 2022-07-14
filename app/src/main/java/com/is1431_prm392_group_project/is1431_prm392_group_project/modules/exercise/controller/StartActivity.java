@@ -41,4 +41,10 @@ public class StartActivity extends AppCompatActivity {
         rc_Exercise.setLayoutManager(new LinearLayoutManager(this));
         rc_Exercise.setAdapter(adapter);
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(this, ExerciseActivity.class);
+        startActivity(i);
+    }
 }
