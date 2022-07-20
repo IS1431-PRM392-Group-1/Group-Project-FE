@@ -9,7 +9,6 @@
     tools:context=".modules.exercise.controller.ExerciseActivity"
     tools:openDrawer="start">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -28,7 +27,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:title="@string/app_name"
             app:titleTextColor="#fff" />
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rc_exercise"
