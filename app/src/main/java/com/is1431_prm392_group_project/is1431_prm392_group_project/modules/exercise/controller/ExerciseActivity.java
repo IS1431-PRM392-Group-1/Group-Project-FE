@@ -37,7 +37,6 @@ public class ExerciseActivity extends AppCompatActivity implements NavigationVie
     private DrawerLayout drawerLayout;
 
     private void bindingView() {
-
         toolbar =
                 (Toolbar) findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
@@ -75,7 +74,6 @@ public class ExerciseActivity extends AppCompatActivity implements NavigationVie
         rc_Exercise.setAdapter(adapter);
     }
 
-
     @Override
     public void onBackPressed() {
         Intent i = new Intent(this, HomeMenu.class);
@@ -110,6 +108,5 @@ public class ExerciseActivity extends AppCompatActivity implements NavigationVie
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
-
     }
 }
