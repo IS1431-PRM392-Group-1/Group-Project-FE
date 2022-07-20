@@ -20,12 +20,9 @@ import com.is1431_prm392_group_project.is1431_prm392_group_project.entity.exerci
 import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.auth.controller.LoginActivity;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.discover.controller.FoodDiscoverActivity;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.exercise.providers.ExerciseService;
-
 import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.home.controller.HomeMenu;
-
 import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.profile.controller.ProfileActivity;
 import com.is1431_prm392_group_project.is1431_prm392_group_project.modules.report.controller.ReportActivity;
-
 
 import java.util.ArrayList;
 
@@ -84,6 +81,7 @@ public class ExerciseActivity extends AppCompatActivity implements NavigationVie
         Intent i = new Intent(this, HomeMenu.class);
         startActivity(i);
     }
+
     private void onBindingAction() {
         nav.setNavigationItemSelectedListener(this);
     }

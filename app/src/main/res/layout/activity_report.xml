@@ -13,8 +13,8 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
         android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true"
         tools:context=".modules.report.controller.ReportActivity">
         <!--line graph view where we will
                be displaying our data-->
