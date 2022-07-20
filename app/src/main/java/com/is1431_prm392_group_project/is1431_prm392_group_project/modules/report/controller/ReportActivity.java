@@ -56,7 +56,7 @@ public class ReportActivity extends AppCompatActivity {
         graphView.setTitle("Your training graph view");
         // on below line we are setting
         // text color to our graph view.
-        graphView.setTitleColor(R.color.purple_200);
+        graphView.setTitleColor(R.color.white);
         // on below line we are setting
         // our title text size.
         graphView.setTitleTextSize(18);
