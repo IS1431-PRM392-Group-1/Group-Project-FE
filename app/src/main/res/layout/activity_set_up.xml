@@ -187,7 +187,7 @@
         android:layout_width="163dp"
         android:layout_height="55dp"
         android:layout_marginBottom="52dp"
-        android:background="@color/design_default_color_on_primary"
+        android:background="@color/colorPrimaryDark"
         android:text="Save Credentials"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
