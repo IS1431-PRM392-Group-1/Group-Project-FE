@@ -9,9 +9,7 @@
     tools:context=".modules.profile.controller.ProfileActivity"
     tools:openDrawer="start">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary"
@@ -108,10 +106,10 @@
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.276"
+            app:layout_constraintHorizontal_bias="0.282"
             app:layout_constraintStart_toEndOf="@+id/text_View11"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.279" />
+            app:layout_constraintVertical_bias="0.267" />
 
         <Spinner
             android:id="@+id/edit_gender1"
@@ -121,10 +119,10 @@
             android:entries="@array/gender"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.45"
+            app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintStart_toEndOf="@+id/text_View4"
             app:layout_constraintTop_toBottomOf="@+id/edit_weight1"
-            app:layout_constraintVertical_bias="0.544" />
+            app:layout_constraintVertical_bias="0.422" />
 
         <EditText
             android:id="@+id/edit_email1"
@@ -133,10 +131,10 @@
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintHorizontal_bias="0.403"
             app:layout_constraintStart_toEndOf="@+id/text_View5"
             app:layout_constraintTop_toBottomOf="@+id/edit_gender1"
-            app:layout_constraintVertical_bias="0.333" />
+            app:layout_constraintVertical_bias="0.195" />
 
         <EditText
             android:id="@+id/edit_age1"
@@ -146,10 +144,10 @@
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.34"
+            app:layout_constraintHorizontal_bias="0.348"
             app:layout_constraintStart_toEndOf="@+id/text_View9"
             app:layout_constraintTop_toBottomOf="@+id/edit_name1"
-            app:layout_constraintVertical_bias="0.576" />
+            app:layout_constraintVertical_bias="0.253" />
 
         <EditText
             android:id="@+id/edit_height1"
@@ -159,10 +157,10 @@
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.283"
+            app:layout_constraintHorizontal_bias="0.279"
             app:layout_constraintStart_toEndOf="@+id/text_View8"
             app:layout_constraintTop_toBottomOf="@+id/edit_age1"
-            app:layout_constraintVertical_bias="0.705" />
+            app:layout_constraintVertical_bias="0.607" />
 
         <EditText
             android:id="@+id/edit_weight1"
@@ -176,7 +174,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/text_View6"
             app:layout_constraintTop_toBottomOf="@+id/edit_height1"
-            app:layout_constraintVertical_bias="0.493" />
+            app:layout_constraintVertical_bias="0.296" />
 
         <Button
             android:id="@+id/btn_save1"
@@ -187,7 +185,7 @@
             android:background="#000"
             android:text="Save Profile"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/white"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -203,7 +201,7 @@
             android:background="#000"
             android:text="Sync Profile"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/white"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

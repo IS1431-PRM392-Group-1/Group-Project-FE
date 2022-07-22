@@ -39,7 +39,7 @@
         android:layout_height="144dp"
         android:background="@drawable/btn_oval"
         android:gravity="center"
-        android:text="01 : 59"
+        android:text="00 : 30"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/white"
@@ -60,19 +60,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.748" />
 
-    <TextView
-        android:id="@+id/button3"
-        android:layout_width="342dp"
-        android:layout_height="57dp"
-        android:background="@drawable/btn_how_to"
-        android:gravity="center"
-        android:text="How to do this"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.946" />
+<!--    <TextView-->
+<!--        android:id="@+id/button3"-->
+<!--        android:layout_width="342dp"-->
+<!--        android:layout_height="57dp"-->
+<!--        android:background="@drawable/btn_how_to"-->
+<!--        android:gravity="center"-->
+<!--        android:text="How to do this"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="@color/white"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.492"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.946" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

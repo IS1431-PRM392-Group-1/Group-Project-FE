@@ -48,7 +48,7 @@ public class ExerciseDetailAdapter extends RecyclerView.Adapter<ExerciseDetailAd
         ExerciseAmount exercise_amount = exercises.get(position);
         Exercise exercise = exercise_amount.getExercise();
         holder.txtName.setText(exercise.getName());
-        holder.txt_perday.setText(exercise.getTime() * exercise_amount.getAmount() + "MIN");
+        holder.txt_perday.setText(1 + "MIN");
         holder.gifImageView.setImageDrawable(context.getResources().getDrawable(exercise.getDetail_gif_id()));
         holder.btn_exercise_detail.setOnClickListener(v -> onClickShowFragment(exercise_amount));
     }
