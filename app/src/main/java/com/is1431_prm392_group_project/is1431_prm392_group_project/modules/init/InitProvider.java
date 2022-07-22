@@ -114,7 +114,7 @@ public class InitProvider {
 
     private void CreateInitExerciseAmount(ExerciseList ex) throws Exception {
         //Exercise exercise, ExerciseList exerciseList, int amount
-        ExerciseAmount exerciseAmount = new ExerciseAmount(exercises.get(random.nextInt(10) + 1), ex, random.nextInt(5) + 1);
+        ExerciseAmount exerciseAmount = new ExerciseAmount(exercises.get(7), ex, 1);
         exerciseAmount.update(repo);
     }
 }

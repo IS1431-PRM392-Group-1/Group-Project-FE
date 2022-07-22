@@ -190,7 +190,7 @@
         android:background="@color/colorPrimaryDark"
         android:text="Save Credentials"
         android:textAlignment="center"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
