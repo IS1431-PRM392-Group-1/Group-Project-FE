@@ -32,3 +32,21 @@ Make sure the code is working and has updated to the latest version from develop
 #### 1. Requirements
 
 -android studio(https://developer.android.com/studio)
+
+## Project Note
+
+#### 1. Next update if i continue to spend time on project
+
+- fix activity_start_exercise
+
+- update web service api call
+
+#### 2. Note for ftp students when they want to use
+
+- Instructor: KhangPQ3
+
+- Course: Mobile Programming(PRM392)
+
+- Project grades: 4.0/5.0
+
+- This project and git link are public to many lecturers at FPT. I am not responsible when you use this project to present to your instructor.
